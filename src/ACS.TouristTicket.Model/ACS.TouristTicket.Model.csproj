@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A58CFB91-F0BC-4D78-BFE3-F3436E0B2ED6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ACS.TouristTicket.Model</RootNamespace>
+    <AssemblyName>ACS.TouristTicket.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ACSSyncData.cs" />
+    <Compile Include="ACSResult.cs" />
+    <Compile Include="ACSUploadTicketActivationLogRequest.cs" />
+    <Compile Include="ACSUploadTicketActivationLogResponse.cs" />
+    <Compile Include="ACSUploadTicketUsageLogRequest.cs" />
+    <Compile Include="ACSUploadTicketUsageLogResponse.cs" />
+    <Compile Include="ACSDownSyncUpdateDateRequest.cs" />
+    <Compile Include="Counter.cs">
+      <DependentUpon>TouristTicket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CounterAndZone.cs">
+      <DependentUpon>TouristTicket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CounterData.cs" />
+    <Compile Include="DistinctZoneGroupName.cs">
+      <DependentUpon>TouristTicket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExceptionLog.cs">
+      <DependentUpon>TouristTicket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExceptionLogShared.cs" />
+    <Compile Include="IACSResponse.cs" />
+    <Compile Include="PrintingApproved.cs">
+      <DependentUpon>TouristTicket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Role.cs">
+      <DependentUpon>TouristTicket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoleObjectShared.cs" />
+    <Compile Include="SampleObject.cs">
+      <DependentUpon>TouristTicket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SampleObjectShared.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="IACSResult.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tbClientUploadDownloadLog.cs">
+      <DependentUpon>TouristTicketSync.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbCode.cs">
+      <DependentUpon>TouristTicketSync.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbCodeCategory.cs">
+      <DependentUpon>TouristTicketSync.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbCounter.cs">
+      <DependentUpon>TouristTicketSync.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbDownloadLog.cs">
+      <DependentUpon>TouristTicketSync.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbExceptionLog.cs">
+      <DependentUpon>TouristTicketSync.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbRole.cs">
+      <DependentUpon>TouristTicketSync.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbSampleTable.cs">
+      <DependentUpon>TouristTicketSync.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbSetting.cs">
+      <DependentUpon>TouristTicketSync.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbTicket.cs">
+      <DependentUpon>TouristTicketSync.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbTicketActivationLog.cs">
+      <DependentUpon>TouristTicketSync.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbTicketInZone.cs">
+      <DependentUpon>TouristTicketSync.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbTicketLog.cs">
+      <DependentUpon>TouristTicketSync.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbTicketSetting.cs">
+      <DependentUpon>TouristTicketSync.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbTicketUnused.cs">
+      <DependentUpon>TouristTicketSync.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbTicketUsage.cs">
+      <DependentUpon>TouristTicketSync.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbTicketUsageLog.cs">
+      <DependentUpon>TouristTicketSync.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbTransactionLog.cs">
+      <DependentUpon>TouristTicketSync.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbUser.cs">
+      <DependentUpon>TouristTicketSync.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbUserAccessLog.cs">
+      <DependentUpon>TouristTicketSync.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbUserInRole.cs">
+      <DependentUpon>TouristTicketSync.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbWebUser.cs">
+      <DependentUpon>TouristTicketSync.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbZone.cs">
+      <DependentUpon>TouristTicketSync.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbZoneAndZoneGroup.cs">
+      <DependentUpon>TouristTicketSync.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbZoneGroup.cs">
+      <DependentUpon>TouristTicketSync.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ticket.cs">
+      <DependentUpon>TouristTicket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TicketActivationLog.cs">
+      <DependentUpon>TouristTicket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TicketDetail.cs">
+      <DependentUpon>TouristTicket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TicketInZone.cs">
+      <DependentUpon>TouristTicket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TicketInZoneObjectShared.cs" />
+    <Compile Include="TicketObjectShared.cs" />
+    <Compile Include="TicketSetting.cs">
+      <DependentUpon>TouristTicket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TicketUnused.cs">
+      <DependentUpon>TouristTicket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TicketUsage.cs">
+      <DependentUpon>TouristTicket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TicketUsageLog.cs">
+      <DependentUpon>TouristTicket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TicketUsageShared.cs" />
+    <Compile Include="TouristTicket.cs">
+      <DependentUpon>TouristTicket.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="TouristTicketSync.cs">
+      <DependentUpon>TouristTicketSync.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="TransactionLog.cs">
+      <DependentUpon>TouristTicket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionLogShared.cs" />
+    <Compile Include="User.cs">
+      <DependentUpon>TouristTicket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserAccessLog.cs">
+      <DependentUpon>TouristTicket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserAccessLogShared.cs" />
+    <Compile Include="UserInRole.cs">
+      <DependentUpon>TouristTicket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserLogIn_Result.cs">
+      <DependentUpon>TouristTicket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserObjectShared.cs" />
+    <Compile Include="Zone.cs">
+      <DependentUpon>TouristTicket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZoneAndZoneGroup.cs">
+      <DependentUpon>TouristTicket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZoneGroup.cs">
+      <DependentUpon>TouristTicket.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZoneObjectShared.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\UserAccessLog.datasource" />
+    <None Include="TouristTicket.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TouristTicket.cs</LastGenOutput>
+    </None>
+    <None Include="TouristTicketSync.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TouristTicketSync.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ACS.TouristTicket.Common\ACS.TouristTicket.Common.csproj">
+      <Project>{906DE57B-27D3-4617-A680-3628BEEAF1AD}</Project>
+      <Name>ACS.TouristTicket.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

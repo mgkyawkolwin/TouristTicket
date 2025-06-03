@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1228/SyncService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ACS.TouristTicket.Model" />
+  <xs:element name="GetUpSyncData">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUpSyncDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ACS.TouristTicket.Model" minOccurs="0" name="GetUpSyncDataResult" nillable="true" type="q1:ACSSyncData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateLastUpSyncDate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ACS.TouristTicket.Model" minOccurs="0" name="syncData" nillable="true" type="q2:ACSSyncData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateLastUpSyncDateResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDownSyncData">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDownSyncDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ACS.TouristTicket.Model" minOccurs="0" name="GetDownSyncDataResult" nillable="true" type="q3:ACSSyncData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateLastDownSyncDate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ACS.TouristTicket.Model" minOccurs="0" name="syncData" nillable="true" type="q4:ACSSyncData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateLastDownSyncDateResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SyncData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/ACS.TouristTicket.Model" minOccurs="0" name="syncData" nillable="true" type="q5:ACSSyncData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SyncDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/ACS.TouristTicket.Model" minOccurs="0" name="SyncDataResult" nillable="true" type="q6:ACSSyncData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,2117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TouristTicket.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="TouristTicketStoreContainer">
+          <EntitySet Name="vwCounter" EntityType="TouristTicket.Store.vwCounter" store:Type="Views" store:Schema="dbo" store:Name="vwCounter">
+            <DefiningQuery>SELECT 
+      [vwCounter].[PKID] AS [PKID], 
+      [vwCounter].[CounterID] AS [CounterID], 
+      [vwCounter].[ZoneID] AS [ZoneID], 
+      [vwCounter].[CreatedBy] AS [CreatedBy], 
+      [vwCounter].[CreatedDate] AS [CreatedDate]
+      FROM [dbo].[vwCounter] AS [vwCounter]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwCounterAndZone" EntityType="TouristTicket.Store.vwCounterAndZone" store:Type="Views" store:Schema="dbo" store:Name="vwCounterAndZone">
+            <DefiningQuery>SELECT 
+      [vwCounterAndZone].[ZoneID] AS [ZoneID], 
+      [vwCounterAndZone].[ZoneGroupID] AS [ZoneGroupID], 
+      [vwCounterAndZone].[ZoneName] AS [ZoneName], 
+      [vwCounterAndZone].[ZoneGroupName] AS [ZoneGroupName], 
+      [vwCounterAndZone].[CounterID] AS [CounterID], 
+      [vwCounterAndZone].[PKID] AS [PKID], 
+      [vwCounterAndZone].[CreatedBy] AS [CreatedBy], 
+      [vwCounterAndZone].[CreatedDate] AS [CreatedDate]
+      FROM [dbo].[vwCounterAndZone] AS [vwCounterAndZone]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwDistinctZoneGroupName" EntityType="TouristTicket.Store.vwDistinctZoneGroupName" store:Type="Views" store:Schema="dbo" store:Name="vwDistinctZoneGroupName">
+            <DefiningQuery>SELECT 
+      [vwDistinctZoneGroupName].[ZoneGroupName] AS [ZoneGroupName]
+      FROM [dbo].[vwDistinctZoneGroupName] AS [vwDistinctZoneGroupName]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwExceptionLog" EntityType="TouristTicket.Store.vwExceptionLog" store:Type="Views" store:Schema="dbo" store:Name="vwExceptionLog">
+            <DefiningQuery>SELECT 
+      [vwExceptionLog].[PKID] AS [PKID], 
+      [vwExceptionLog].[ErrorMessage] AS [ErrorMessage], 
+      [vwExceptionLog].[StackTrace] AS [StackTrace], 
+      [vwExceptionLog].[CreatedDate] AS [CreatedDate]
+      FROM [dbo].[vwExceptionLog] AS [vwExceptionLog]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwPrintingApproved" EntityType="TouristTicket.Store.vwPrintingApproved" store:Type="Views" store:Schema="dbo" store:Name="vwPrintingApproved">
+            <DefiningQuery>SELECT 
+      [vwPrintingApproved].[id] AS [id], 
+      [vwPrintingApproved].[ApprovedCode] AS [ApprovedCode]
+      FROM [dbo].[vwPrintingApproved] AS [vwPrintingApproved]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwRole" EntityType="TouristTicket.Store.vwRole" store:Type="Views" store:Schema="dbo" store:Name="vwRole">
+            <DefiningQuery>SELECT 
+      [vwRole].[PKID] AS [PKID], 
+      [vwRole].[RoleName] AS [RoleName], 
+      [vwRole].[RoleDescription] AS [RoleDescription]
+      FROM [dbo].[vwRole] AS [vwRole]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwSampleObject" EntityType="TouristTicket.Store.vwSampleObject" store:Type="Views" store:Schema="dbo" store:Name="vwSampleObject">
+            <DefiningQuery>SELECT 
+      [vwSampleObject].[PKID] AS [PKID], 
+      [vwSampleObject].[SampleColumn] AS [SampleColumn]
+      FROM [dbo].[vwSampleObject] AS [vwSampleObject]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwTicket" EntityType="TouristTicket.Store.vwTicket" store:Type="Views" store:Schema="dbo" store:Name="vwTicket">
+            <DefiningQuery>SELECT 
+      [vwTicket].[PKID] AS [PKID], 
+      [vwTicket].[Price] AS [Price], 
+      [vwTicket].[TicketStatus] AS [TicketStatus], 
+      [vwTicket].[AllowedUsage] AS [AllowedUsage], 
+      [vwTicket].[AlreadyUsed] AS [AlreadyUsed], 
+      [vwTicket].[TicketData] AS [TicketData], 
+      [vwTicket].[IsActivated] AS [IsActivated], 
+      [vwTicket].[CreatedDate] AS [CreatedDate], 
+      [vwTicket].[CreatedBy] AS [CreatedBy], 
+      [vwTicket].[ModifiedDate] AS [ModifiedDate], 
+      [vwTicket].[ModifiedBy] AS [ModifiedBy], 
+      [vwTicket].[ActivatedDate] AS [ActivatedDate], 
+      [vwTicket].[ActivatedBy] AS [ActivatedBy], 
+      [vwTicket].[ExpiryDate] AS [ExpiryDate], 
+      [vwTicket].[AllowedDays] AS [AllowedDays]
+      FROM [dbo].[vwTicket] AS [vwTicket]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwTicketActivationLog" EntityType="TouristTicket.Store.vwTicketActivationLog" store:Type="Views" store:Schema="dbo" store:Name="vwTicketActivationLog">
+            <DefiningQuery>SELECT 
+      [vwTicketActivationLog].[PKID] AS [PKID], 
+      [vwTicketActivationLog].[CounterID] AS [CounterID], 
+      [vwTicketActivationLog].[ZoneID] AS [ZoneID], 
+      [vwTicketActivationLog].[TransactionID] AS [TransactionID], 
+      [vwTicketActivationLog].[TicketID] AS [TicketID], 
+      [vwTicketActivationLog].[ActivatedDate] AS [ActivatedDate]
+      FROM [dbo].[vwTicketActivationLog] AS [vwTicketActivationLog]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwTicketDetails" EntityType="TouristTicket.Store.vwTicketDetails" store:Type="Views" store:Schema="dbo" store:Name="vwTicketDetails">
+            <DefiningQuery>SELECT 
+      [vwTicketDetails].[PKID] AS [PKID], 
+      [vwTicketDetails].[Price] AS [Price], 
+      [vwTicketDetails].[TicketStatus] AS [TicketStatus], 
+      [vwTicketDetails].[ZoneGroupName] AS [ZoneGroupName], 
+      [vwTicketDetails].[CreatedDate] AS [CreatedDate], 
+      [vwTicketDetails].[UserID] AS [UserID], 
+      [vwTicketDetails].[AllowedUsage] AS [AllowedUsage], 
+      [vwTicketDetails].[AllowedDays] AS [AllowedDays]
+      FROM [dbo].[vwTicketDetails] AS [vwTicketDetails]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwTicketInZone" EntityType="TouristTicket.Store.vwTicketInZone" store:Type="Views" store:Schema="dbo" store:Name="vwTicketInZone">
+            <DefiningQuery>SELECT 
+      [vwTicketInZone].[PKID] AS [PKID], 
+      [vwTicketInZone].[TicketID] AS [TicketID], 
+      [vwTicketInZone].[ZoneID] AS [ZoneID], 
+      [vwTicketInZone].[CreatedDate] AS [CreatedDate], 
+      [vwTicketInZone].[CreatedBy] AS [CreatedBy], 
+      [vwTicketInZone].[ModifiedDate] AS [ModifiedDate], 
+      [vwTicketInZone].[ModifiedBy] AS [ModifiedBy]
+      FROM [dbo].[vwTicketInZone] AS [vwTicketInZone]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwTicketSettings" EntityType="TouristTicket.Store.vwTicketSettings" store:Type="Views" store:Schema="dbo" store:Name="vwTicketSettings">
+            <DefiningQuery>SELECT 
+      [vwTicketSettings].[PKID] AS [PKID], 
+      [vwTicketSettings].[ZoneGroupID] AS [ZoneGroupID], 
+      [vwTicketSettings].[DaysAllowed] AS [DaysAllowed], 
+      [vwTicketSettings].[EntryAllowed] AS [EntryAllowed], 
+      [vwTicketSettings].[Price] AS [Price], 
+      [vwTicketSettings].[CreatedBy] AS [CreatedBy], 
+      [vwTicketSettings].[CreatedDate] AS [CreatedDate], 
+      [vwTicketSettings].[ModifiedBy] AS [ModifiedBy], 
+      [vwTicketSettings].[ModifiedDate] AS [ModifiedDate]
+      FROM [dbo].[vwTicketSettings] AS [vwTicketSettings]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwTicketUnused" EntityType="TouristTicket.Store.vwTicketUnused" store:Type="Views" store:Schema="dbo" store:Name="vwTicketUnused">
+            <DefiningQuery>SELECT 
+      [vwTicketUnused].[PKID] AS [PKID], 
+      [vwTicketUnused].[SerialNo] AS [SerialNo], 
+      [vwTicketUnused].[Reason] AS [Reason], 
+      [vwTicketUnused].[CreatedBy] AS [CreatedBy], 
+      [vwTicketUnused].[CreatedDate] AS [CreatedDate], 
+      [vwTicketUnused].[ModifiedBy] AS [ModifiedBy], 
+      [vwTicketUnused].[ModifiedDate] AS [ModifiedDate], 
+      [vwTicketUnused].[UserID] AS [UserID]
+      FROM [dbo].[vwTicketUnused] AS [vwTicketUnused]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwTicketUsage" EntityType="TouristTicket.Store.vwTicketUsage" store:Type="Views" store:Schema="dbo" store:Name="vwTicketUsage">
+            <DefiningQuery>SELECT 
+      [vwTicketUsage].[PKID] AS [PKID], 
+      [vwTicketUsage].[TicketID] AS [TicketID], 
+      [vwTicketUsage].[ZoneID] AS [ZoneID], 
+      [vwTicketUsage].[DateUsed] AS [DateUsed]
+      FROM [dbo].[vwTicketUsage] AS [vwTicketUsage]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwTicketUsageLog" EntityType="TouristTicket.Store.vwTicketUsageLog" store:Type="Views" store:Schema="dbo" store:Name="vwTicketUsageLog">
+            <DefiningQuery>SELECT 
+      [vwTicketUsageLog].[PKID] AS [PKID], 
+      [vwTicketUsageLog].[TicketID] AS [TicketID], 
+      [vwTicketUsageLog].[ZoneID] AS [ZoneID], 
+      [vwTicketUsageLog].[CounterID] AS [CounterID], 
+      [vwTicketUsageLog].[UsageCountBefore] AS [UsageCountBefore], 
+      [vwTicketUsageLog].[UsageCountAfter] AS [UsageCountAfter], 
+      [vwTicketUsageLog].[DateUsed] AS [DateUsed], 
+      [vwTicketUsageLog].[TransactionID] AS [TransactionID]
+      FROM [dbo].[vwTicketUsageLog] AS [vwTicketUsageLog]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwTransactionLog" EntityType="TouristTicket.Store.vwTransactionLog" store:Type="Views" store:Schema="dbo" store:Name="vwTransactionLog">
+            <DefiningQuery>SELECT 
+      [vwTransactionLog].[PKID] AS [PKID], 
+      [vwTransactionLog].[TransactionType] AS [TransactionType], 
+      [vwTransactionLog].[TransactionDate] AS [TransactionDate], 
+      [vwTransactionLog].[Data] AS [Data]
+      FROM [dbo].[vwTransactionLog] AS [vwTransactionLog]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwUser" EntityType="TouristTicket.Store.vwUser" store:Type="Views" store:Schema="dbo" store:Name="vwUser">
+            <DefiningQuery>SELECT 
+      [vwUser].[PKID] AS [PKID], 
+      [vwUser].[UserID] AS [UserID], 
+      [vwUser].[Password] AS [Password], 
+      [vwUser].[DisplayName] AS [DisplayName], 
+      [vwUser].[Status] AS [Status], 
+      [vwUser].[CreatedDate] AS [CreatedDate], 
+      [vwUser].[CreatedBy] AS [CreatedBy], 
+      [vwUser].[ModifiedDate] AS [ModifiedDate], 
+      [vwUser].[ModifiedBy] AS [ModifiedBy], 
+      [vwUser].[Position] AS [Position]
+      FROM [dbo].[vwUser] AS [vwUser]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwUserAccessLog" EntityType="TouristTicket.Store.vwUserAccessLog" store:Type="Views" store:Schema="dbo" store:Name="vwUserAccessLog">
+            <DefiningQuery>SELECT 
+      [vwUserAccessLog].[PKID] AS [PKID], 
+      [vwUserAccessLog].[UserPKID] AS [UserPKID], 
+      [vwUserAccessLog].[AccessDate] AS [AccessDate], 
+      [vwUserAccessLog].[Action] AS [Action], 
+      [vwUserAccessLog].[User_PKID] AS [User_PKID], 
+      [vwUserAccessLog].[UserID] AS [UserID], 
+      [vwUserAccessLog].[DisplayName] AS [DisplayName], 
+      [vwUserAccessLog].[Status] AS [Status], 
+      [vwUserAccessLog].[CreatedDate] AS [CreatedDate]
+      FROM [dbo].[vwUserAccessLog] AS [vwUserAccessLog]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwUserInRole" EntityType="TouristTicket.Store.vwUserInRole" store:Type="Views" store:Schema="dbo" store:Name="vwUserInRole">
+            <DefiningQuery>SELECT 
+      [vwUserInRole].[PKID] AS [PKID], 
+      [vwUserInRole].[RoleID] AS [RoleID], 
+      [vwUserInRole].[RoleName] AS [RoleName], 
+      [vwUserInRole].[RoleDescription] AS [RoleDescription], 
+      [vwUserInRole].[Password] AS [Password], 
+      [vwUserInRole].[DisplayName] AS [DisplayName], 
+      [vwUserInRole].[Status] AS [Status], 
+      [vwUserInRole].[UserPKID] AS [UserPKID], 
+      [vwUserInRole].[UserID] AS [UserID], 
+      [vwUserInRole].[Position] AS [Position]
+      FROM [dbo].[vwUserInRole] AS [vwUserInRole]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwZone" EntityType="TouristTicket.Store.vwZone" store:Type="Views" store:Schema="dbo" store:Name="vwZone">
+            <DefiningQuery>SELECT 
+      [vwZone].[PKID] AS [PKID], 
+      [vwZone].[ZoneID] AS [ZoneID], 
+      [vwZone].[ZoneName] AS [ZoneName], 
+      [vwZone].[Address] AS [Address], 
+      [vwZone].[InCharge] AS [InCharge], 
+      [vwZone].[Phone] AS [Phone]
+      FROM [dbo].[vwZone] AS [vwZone]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwZoneAndZoneGroup" EntityType="TouristTicket.Store.vwZoneAndZoneGroup" store:Type="Views" store:Schema="dbo" store:Name="vwZoneAndZoneGroup">
+            <DefiningQuery>SELECT 
+      [vwZoneAndZoneGroup].[ZoneID] AS [ZoneID], 
+      [vwZoneAndZoneGroup].[ZoneName] AS [ZoneName], 
+      [vwZoneAndZoneGroup].[ZoneGroupName] AS [ZoneGroupName], 
+      [vwZoneAndZoneGroup].[ZoneGroupID] AS [ZoneGroupID], 
+      [vwZoneAndZoneGroup].[PKID] AS [PKID], 
+      [vwZoneAndZoneGroup].[LinkID] AS [LinkID], 
+      [vwZoneAndZoneGroup].[Address] AS [Address], 
+      [vwZoneAndZoneGroup].[Phone] AS [Phone], 
+      [vwZoneAndZoneGroup].[InCharge] AS [InCharge]
+      FROM [dbo].[vwZoneAndZoneGroup] AS [vwZoneAndZoneGroup]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwZoneGroup" EntityType="TouristTicket.Store.vwZoneGroup" store:Type="Views" store:Schema="dbo" store:Name="vwZoneGroup">
+            <DefiningQuery>SELECT 
+      [vwZoneGroup].[PKID] AS [PKID], 
+      [vwZoneGroup].[ZoneGroupID] AS [ZoneGroupID], 
+      [vwZoneGroup].[ZoneGroupName] AS [ZoneGroupName], 
+      [vwZoneGroup].[DaysAllowed] AS [DaysAllowed], 
+      [vwZoneGroup].[EntriesAllowed] AS [EntriesAllowed], 
+      [vwZoneGroup].[Price] AS [Price]
+      FROM [dbo].[vwZoneGroup] AS [vwZoneGroup]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'D:\ACS.TOURISTTICKET.TICKETADMIN_2012_09_17\ACS.TOURISTTICKET.TICKETADMIN\ACS.TOURISTTICKET.WINAPP\DB\TOURISTTICKET.MDF.dbo.vwCounter' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwCounter">
+          <Key>
+            <PropertyRef Name="PKID" />
+            
+            
+            
+            
+          </Key>
+          <Property Name="PKID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CounterID" Type="int" Nullable="false" />
+          <Property Name="ZoneID" Type="int" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'D:\ACS.TOURISTTICKET.TICKETADMIN_2012_09_17\ACS.TOURISTTICKET.TICKETADMIN\ACS.TOURISTTICKET.WINAPP\DB\TOURISTTICKET.MDF.dbo.vwCounterAndZone' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwCounterAndZone">
+          <Key>
+            
+            
+            
+            
+            
+            <PropertyRef Name="PKID" />
+            
+            
+          </Key>
+          <Property Name="ZoneID" Type="int" Nullable="false" />
+          <Property Name="ZoneGroupID" Type="int" Nullable="false" />
+          <Property Name="ZoneName" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="ZoneGroupName" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="CounterID" Type="int" Nullable="false" />
+          <Property Name="PKID" Type="int" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'D:\ACS.TOURISTTICKET.TICKETADMIN_2012_09_17\ACS.TOURISTTICKET.TICKETADMIN\ACS.TOURISTTICKET.WINAPP\DB\TOURISTTICKET.MDF.dbo.vwDistinctZoneGroupName' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwDistinctZoneGroupName">
+          <Key>
+            <PropertyRef Name="ZoneGroupName" />
+          </Key>
+          <Property Name="ZoneGroupName" Type="varchar" Nullable="false" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'D:\ACS.TOURISTTICKET.TICKETADMIN_2012_09_17\ACS.TOURISTTICKET.TICKETADMIN\ACS.TOURISTTICKET.WINAPP\DB\TOURISTTICKET.MDF.dbo.vwExceptionLog' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwExceptionLog">
+          <Key>
+            <PropertyRef Name="PKID" />
+            
+            
+          </Key>
+          <Property Name="PKID" Type="int" Nullable="false" />
+          <Property Name="ErrorMessage" Type="varchar" Nullable="false" MaxLength="256" />
+          <Property Name="StackTrace" Type="varchar" MaxLength="512" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'D:\ACS.TOURISTTICKET.TICKETADMIN_2012_09_17\ACS.TOURISTTICKET.TICKETADMIN\ACS.TOURISTTICKET.WINAPP\DB\TOURISTTICKET.MDF.dbo.vwPrintingApproved' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwPrintingApproved">
+          <Key>
+            <PropertyRef Name="id" />
+            
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ApprovedCode" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'D:\ACS.TOURISTTICKET.TICKETADMIN_2012_09_17\ACS.TOURISTTICKET.TICKETADMIN\ACS.TOURISTTICKET.WINAPP\DB\TOURISTTICKET.MDF.dbo.vwRole' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwRole">
+          <Key>
+            <PropertyRef Name="PKID" />
+            
+            
+          </Key>
+          <Property Name="PKID" Type="int" Nullable="false" />
+          <Property Name="RoleName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="RoleDescription" Type="varchar" Nullable="false" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'D:\ACS.TOURISTTICKET.TICKETADMIN_2012_09_17\ACS.TOURISTTICKET.TICKETADMIN\ACS.TOURISTTICKET.WINAPP\DB\TOURISTTICKET.MDF.dbo.vwSampleObject' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwSampleObject">
+          <Key>
+            <PropertyRef Name="PKID" />
+            
+          </Key>
+          <Property Name="PKID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SampleColumn" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'D:\ACS.TOURISTTICKET.TICKETADMIN_2012_09_17\ACS.TOURISTTICKET.TICKETADMIN\ACS.TOURISTTICKET.WINAPP\DB\TOURISTTICKET.MDF.dbo.vwTicket' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwTicket">
+          <Key>
+            <PropertyRef Name="PKID" />
+            
+            
+            
+            
+            <PropertyRef Name="IsActivated" />
+            
+            
+            
+            
+            <PropertyRef Name="AllowedDays" />
+          </Key>
+          <Property Name="PKID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Price" Type="decimal" Nullable="false" Precision="9" Scale="2" />
+          <Property Name="TicketStatus" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="AllowedUsage" Type="int" Nullable="false" />
+          <Property Name="AlreadyUsed" Type="int" Nullable="false" />
+          <Property Name="TicketData" Type="varchar" MaxLength="256" />
+          <Property Name="IsActivated" Type="bit" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="int" Nullable="false" />
+          <Property Name="ActivatedDate" Type="datetime" />
+          <Property Name="ActivatedBy" Type="int" />
+          <Property Name="ExpiryDate" Type="datetime" />
+          <Property Name="AllowedDays" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'D:\ACS.TOURISTTICKET.TICKETADMIN_2012_09_17\ACS.TOURISTTICKET.TICKETADMIN\ACS.TOURISTTICKET.WINAPP\DB\TOURISTTICKET.MDF.dbo.vwTicketActivationLog' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwTicketActivationLog">
+          <Key>
+            <PropertyRef Name="PKID" />
+            <PropertyRef Name="CounterID" />
+            <PropertyRef Name="ZoneID" />
+            
+            
+            
+          </Key>
+          <Property Name="PKID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CounterID" Type="int" Nullable="false" />
+          <Property Name="ZoneID" Type="int" Nullable="false" />
+          <Property Name="TransactionID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TicketID" Type="int" Nullable="false" />
+          <Property Name="ActivatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'D:\ACS.TOURISTTICKET.TICKETADMIN_2012_09_17\ACS.TOURISTTICKET.TICKETADMIN\ACS.TOURISTTICKET.WINAPP\DB\TOURISTTICKET.MDF.dbo.vwTicketDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwTicketDetails">
+          <Key>
+            <PropertyRef Name="PKID" />
+            
+            
+            
+            
+            
+            
+            
+          </Key>
+          <Property Name="PKID" Type="int" Nullable="false" />
+          <Property Name="Price" Type="decimal" Nullable="false" Precision="9" Scale="2" />
+          <Property Name="TicketStatus" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ZoneGroupName" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="UserID" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="AllowedUsage" Type="int" Nullable="false" />
+          <Property Name="AllowedDays" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'D:\ACS.TOURISTTICKET.TICKETADMIN_2012_09_17\ACS.TOURISTTICKET.TICKETADMIN\ACS.TOURISTTICKET.WINAPP\DB\TOURISTTICKET.MDF.dbo.vwTicketInZone' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwTicketInZone">
+          <Key>
+            <PropertyRef Name="PKID" />
+            
+            
+            
+            
+            
+            
+          </Key>
+          <Property Name="PKID" Type="int" Nullable="false" />
+          <Property Name="TicketID" Type="int" Nullable="false" />
+          <Property Name="ZoneID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'D:\ACS.TOURISTTICKET.TICKETADMIN_2012_09_17\ACS.TOURISTTICKET.TICKETADMIN\ACS.TOURISTTICKET.WINAPP\DB\TOURISTTICKET.MDF.dbo.vwTicketSettings' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwTicketSettings">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ZoneGroupID" Type="varchar" MaxLength="50" />
+          <Property Name="DaysAllowed" Type="int" />
+          <Property Name="EntryAllowed" Type="int" />
+          <Property Name="Price" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'D:\ACS.TOURISTTICKET.TICKETADMIN_2012_09_17\ACS.TOURISTTICKET.TICKETADMIN\ACS.TOURISTTICKET.WINAPP\DB\TOURISTTICKET.MDF.dbo.vwTicketUnused' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwTicketUnused">
+          <Key>
+            <PropertyRef Name="PKID" />
+            
+            
+            
+            
+            
+            
+          </Key>
+          <Property Name="PKID" Type="int" Nullable="false" />
+          <Property Name="SerialNo" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Reason" Type="nvarchar" MaxLength="500" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="int" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="UserID" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'D:\ACS.TOURISTTICKET.TICKETADMIN_2012_09_17\ACS.TOURISTTICKET.TICKETADMIN\ACS.TOURISTTICKET.WINAPP\DB\TOURISTTICKET.MDF.dbo.vwTicketUsage' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwTicketUsage">
+          <Key>
+            <PropertyRef Name="PKID" />
+            
+            
+            
+          </Key>
+          <Property Name="PKID" Type="int" Nullable="false" />
+          <Property Name="TicketID" Type="int" Nullable="false" />
+          <Property Name="ZoneID" Type="int" Nullable="false" />
+          <Property Name="DateUsed" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'D:\ACS.TOURISTTICKET.TICKETADMIN_2012_09_17\ACS.TOURISTTICKET.TICKETADMIN\ACS.TOURISTTICKET.WINAPP\DB\TOURISTTICKET.MDF.dbo.vwTicketUsageLog' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwTicketUsageLog">
+          <Key>
+            <PropertyRef Name="PKID" />
+            
+            
+            
+            
+            
+            
+            
+          </Key>
+          <Property Name="PKID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TicketID" Type="int" Nullable="false" />
+          <Property Name="ZoneID" Type="int" Nullable="false" />
+          <Property Name="CounterID" Type="int" Nullable="false" />
+          <Property Name="UsageCountBefore" Type="int" Nullable="false" />
+          <Property Name="UsageCountAfter" Type="int" Nullable="false" />
+          <Property Name="DateUsed" Type="datetime" Nullable="false" />
+          <Property Name="TransactionID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'D:\ACS.TOURISTTICKET.TICKETADMIN_2012_09_17\ACS.TOURISTTICKET.TICKETADMIN\ACS.TOURISTTICKET.WINAPP\DB\TOURISTTICKET.MDF.dbo.vwTransactionLog' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwTransactionLog">
+          <Key>
+            <PropertyRef Name="PKID" />
+            
+            
+          </Key>
+          <Property Name="PKID" Type="int" Nullable="false" />
+          <Property Name="TransactionType" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="TransactionDate" Type="datetime" Nullable="false" />
+          <Property Name="Data" Type="varchar" MaxLength="512" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'D:\ACS.TOURISTTICKET.TICKETADMIN_2012_09_17\ACS.TOURISTTICKET.TICKETADMIN\ACS.TOURISTTICKET.WINAPP\DB\TOURISTTICKET.MDF.dbo.vwUser' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwUser">
+          <Key>
+            <PropertyRef Name="PKID" />
+            
+            
+            
+            
+            
+            
+            
+            
+          </Key>
+          <Property Name="PKID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Password" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="DisplayName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Status" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="int" Nullable="false" />
+          <Property Name="Position" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'D:\ACS.TOURISTTICKET.TICKETADMIN_2012_09_17\ACS.TOURISTTICKET.TICKETADMIN\ACS.TOURISTTICKET.WINAPP\DB\TOURISTTICKET.MDF.dbo.vwUserAccessLog' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwUserAccessLog">
+          <Key>
+            <PropertyRef Name="PKID" />
+            <PropertyRef Name="UserPKID" />
+            <PropertyRef Name="AccessDate" />
+            <PropertyRef Name="Action" />
+            <PropertyRef Name="User_PKID" />
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="DisplayName" />
+            <PropertyRef Name="Status" />
+            <PropertyRef Name="CreatedDate" />
+          </Key>
+          <Property Name="PKID" Type="int" Nullable="false" />
+          <Property Name="UserPKID" Type="int" Nullable="false" />
+          <Property Name="AccessDate" Type="datetime" Nullable="false" />
+          <Property Name="Action" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="User_PKID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="DisplayName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Status" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'D:\ACS.TOURISTTICKET.TICKETADMIN_2012_09_17\ACS.TOURISTTICKET.TICKETADMIN\ACS.TOURISTTICKET.WINAPP\DB\TOURISTTICKET.MDF.dbo.vwUserInRole' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwUserInRole">
+          <Key>
+            <PropertyRef Name="PKID" />
+            
+            
+            
+            
+            
+            
+            
+            
+          </Key>
+          <Property Name="PKID" Type="int" Nullable="false" />
+          <Property Name="RoleID" Type="int" Nullable="false" />
+          <Property Name="RoleName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="RoleDescription" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Password" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="DisplayName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Status" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="UserPKID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Position" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'D:\ACS.TOURISTTICKET.TICKETADMIN_2012_09_17\ACS.TOURISTTICKET.TICKETADMIN\ACS.TOURISTTICKET.WINAPP\DB\TOURISTTICKET.MDF.dbo.vwZone' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwZone">
+          <Key>
+            <PropertyRef Name="PKID" />
+            
+          </Key>
+          <Property Name="PKID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ZoneID" Type="varchar" MaxLength="10" />
+          <Property Name="ZoneName" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Address" Type="varchar" MaxLength="300" />
+          <Property Name="InCharge" Type="varchar" MaxLength="50" />
+          <Property Name="Phone" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'D:\ACS.TOURISTTICKET.TICKETADMIN_2012_09_17\ACS.TOURISTTICKET.TICKETADMIN\ACS.TOURISTTICKET.WINAPP\DB\TOURISTTICKET.MDF.dbo.vwZoneAndZoneGroup' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwZoneAndZoneGroup">
+          <Key>
+            
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="ZoneID" Type="varchar" MaxLength="10" />
+          <Property Name="ZoneName" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="ZoneGroupName" Type="varchar" MaxLength="255" />
+          <Property Name="ZoneGroupID" Type="varchar" MaxLength="10" />
+          <Property Name="PKID" Type="int" Nullable="false" />
+          <Property Name="LinkID" Type="int" />
+          <Property Name="Address" Type="varchar" MaxLength="300" />
+          <Property Name="Phone" Type="varchar" MaxLength="50" />
+          <Property Name="InCharge" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'D:\ACS.TOURISTTICKET.TICKETADMIN_2012_09_17\ACS.TOURISTTICKET.TICKETADMIN\ACS.TOURISTTICKET.WINAPP\DB\TOURISTTICKET.MDF.dbo.vwZoneGroup' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwZoneGroup">
+          <Key>
+            <PropertyRef Name="PKID" />
+            
+            
+            
+            
+            
+          </Key>
+          <Property Name="PKID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ZoneGroupID" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="ZoneGroupName" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="DaysAllowed" Type="int" Nullable="false" />
+          <Property Name="EntriesAllowed" Type="int" Nullable="false" />
+          <Property Name="Price" Type="decimal" Nullable="false" Precision="9" Scale="2" />
+        </EntityType>
+        <Function Name="DeleteCounter" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CounterID" Type="int" Mode="In" />
+          <Parameter Name="ErrorCode" Type="varchar" Mode="InOut" />
+          <Parameter Name="ErrorMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="DeletePrintingCode" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="DeleteTicketSettings" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TicketZoneID" Type="varchar" Mode="In" />
+          <Parameter Name="ErrorCode" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="DeleteUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserID" Type="varchar" Mode="In" />
+          <Parameter Name="ErrorCode" Type="varchar" Mode="InOut" />
+          <Parameter Name="ErrorMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="DeleteUserInRole" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserID" Type="varchar" Mode="In" />
+          <Parameter Name="ErrorCode" Type="varchar" Mode="InOut" />
+          <Parameter Name="ErrorMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="DeleteZone" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ZoneID" Type="varchar" Mode="In" />
+          <Parameter Name="ErrorCode" Type="varchar" Mode="InOut" />
+          <Parameter Name="ErrorMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="DeleteZoneGroup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ZoneGroupID" Type="varchar" Mode="In" />
+          <Parameter Name="ErrorCode" Type="varchar" Mode="InOut" />
+          <Parameter Name="ErrorMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="DownloadData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CounterID" Type="int" Mode="In" />
+          <Parameter Name="NumOfRecords" Type="int" Mode="In" />
+          <Parameter Name="PageIndex" Type="int" Mode="In" />
+          <Parameter Name="ErrorCode" Type="varchar" Mode="InOut" />
+          <Parameter Name="ErrorMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="ExportData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CounterID" Type="int" Mode="In" />
+          <Parameter Name="ErrorCode" Type="varchar" Mode="InOut" />
+          <Parameter Name="ErrorMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="ExportFromServer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CounterID" Type="int" Mode="In" />
+          <Parameter Name="ErrorCode" Type="varchar" Mode="InOut" />
+          <Parameter Name="ErrorMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="InsertApprovedCode" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ApprovedCode" Type="varchar" Mode="In" />
+          <Parameter Name="ErrorCode" Type="varchar" Mode="InOut" />
+          <Parameter Name="ErrorMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="InsertCounter" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PKID" Type="int" Mode="InOut" />
+          <Parameter Name="CounterID" Type="int" Mode="In" />
+          <Parameter Name="ZoneID" Type="int" Mode="In" />
+          <Parameter Name="CreatedBy" Type="int" Mode="In" />
+          <Parameter Name="CreatedDate" Type="datetime" Mode="In" />
+          <Parameter Name="ErrorCode" Type="varchar" Mode="InOut" />
+          <Parameter Name="ErrorMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="InsertExceptionLog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PKID" Type="int" Mode="InOut" />
+          <Parameter Name="ErrorMessage" Type="varchar" Mode="In" />
+          <Parameter Name="StackTrace" Type="varchar" Mode="In" />
+          <Parameter Name="CreatedDate" Type="datetime" Mode="In" />
+          <Parameter Name="ErrorCode" Type="varchar" Mode="InOut" />
+          <Parameter Name="ErrorMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="InsertNewTicket" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PKID" Type="int" Mode="In" />
+          <Parameter Name="ZoneGroupID" Type="varchar" Mode="In" />
+          <Parameter Name="Price" Type="decimal" Mode="In" />
+          <Parameter Name="TicketStatus" Type="varchar" Mode="In" />
+          <Parameter Name="AllowedUsage" Type="int" Mode="In" />
+          <Parameter Name="AlreadyUsed" Type="int" Mode="In" />
+          <Parameter Name="AllowedDays" Type="int" Mode="In" />
+          <Parameter Name="ExpiryDate" Type="datetime" Mode="In" />
+          <Parameter Name="TicketData" Type="varchar" Mode="In" />
+          <Parameter Name="CreatedDate" Type="datetime" Mode="In" />
+          <Parameter Name="CreatedBy" Type="int" Mode="In" />
+          <Parameter Name="ModifiedDate" Type="datetime" Mode="In" />
+          <Parameter Name="ModifiedBy" Type="int" Mode="In" />
+          <Parameter Name="ErrorCode" Type="varchar" Mode="InOut" />
+          <Parameter Name="ErrorMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="InsertNewUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PKID" Type="int" Mode="InOut" />
+          <Parameter Name="UserID" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+          <Parameter Name="DisplayName" Type="varchar" Mode="In" />
+          <Parameter Name="Position" Type="varchar" Mode="In" />
+          <Parameter Name="Status" Type="varchar" Mode="In" />
+          <Parameter Name="CreatedDate" Type="datetime" Mode="In" />
+          <Parameter Name="CreatedBy" Type="int" Mode="In" />
+          <Parameter Name="ModifiedDate" Type="datetime" Mode="In" />
+          <Parameter Name="ModifiedBy" Type="int" Mode="In" />
+          <Parameter Name="ErrorCode" Type="varchar" Mode="InOut" />
+          <Parameter Name="ErrorMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="InsertTicketActivationLog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CounterID" Type="int" Mode="In" />
+          <Parameter Name="ZoneID" Type="int" Mode="In" />
+          <Parameter Name="TicketID" Type="int" Mode="In" />
+          <Parameter Name="TransactionID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="ActivatedDate" Type="datetime" Mode="In" />
+          <Parameter Name="ErrorCode" Type="varchar" Mode="InOut" />
+          <Parameter Name="ErrorMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="InsertTicketInZone" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PKID" Type="int" Mode="InOut" />
+          <Parameter Name="TicketID" Type="varchar" Mode="In" />
+          <Parameter Name="ZoneGroupID" Type="varchar" Mode="In" />
+          <Parameter Name="CreatedBy" Type="int" Mode="In" />
+          <Parameter Name="CreatedDate" Type="datetime" Mode="In" />
+          <Parameter Name="ModifiedBy" Type="int" Mode="In" />
+          <Parameter Name="ModifiedDate" Type="datetime" Mode="In" />
+          <Parameter Name="ErrorCode" Type="varchar" Mode="InOut" />
+          <Parameter Name="ErrorMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="InsertTicketUnused" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PKID" Type="int" Mode="InOut" />
+          <Parameter Name="SerialNo" Type="varchar" Mode="In" />
+          <Parameter Name="Reason" Type="nvarchar" Mode="In" />
+          <Parameter Name="CreatedBy" Type="int" Mode="In" />
+          <Parameter Name="CreatedDate" Type="datetime" Mode="In" />
+          <Parameter Name="ModifiedBy" Type="int" Mode="In" />
+          <Parameter Name="ModifiedDate" Type="datetime" Mode="In" />
+          <Parameter Name="ErrorCode" Type="varchar" Mode="InOut" />
+          <Parameter Name="ErrorMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="InsertTicketUsage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PKID" Type="int" Mode="InOut" />
+          <Parameter Name="TicketID" Type="int" Mode="In" />
+          <Parameter Name="ZoneID" Type="int" Mode="In" />
+          <Parameter Name="DateUsed" Type="datetime" Mode="In" />
+          <Parameter Name="ErrorCode" Type="varchar" Mode="InOut" />
+          <Parameter Name="ErrorMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="InsertTicketUsageLog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CounterID" Type="int" Mode="In" />
+          <Parameter Name="ZoneID" Type="int" Mode="In" />
+          <Parameter Name="TicketID" Type="int" Mode="In" />
+          <Parameter Name="DateUsed" Type="datetime" Mode="In" />
+          <Parameter Name="UsageCountBefore" Type="int" Mode="In" />
+          <Parameter Name="TransactionID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="UsageCountAfter" Type="int" Mode="In" />
+          <Parameter Name="ErrorCode" Type="varchar" Mode="InOut" />
+          <Parameter Name="ErrorMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="InsertTransactionLog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PKID" Type="int" Mode="InOut" />
+          <Parameter Name="TransactionType" Type="varchar" Mode="In" />
+          <Parameter Name="TransactionDate" Type="datetime" Mode="In" />
+          <Parameter Name="Data" Type="varchar" Mode="In" />
+          <Parameter Name="ErrorCode" Type="varchar" Mode="InOut" />
+          <Parameter Name="ErrorMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="InsertUpdateTicket" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PKID" Type="int" Mode="In" />
+          <Parameter Name="Price" Type="decimal" Mode="In" />
+          <Parameter Name="TicketStatus" Type="varchar" Mode="In" />
+          <Parameter Name="AllowedUsage" Type="int" Mode="In" />
+          <Parameter Name="AlreadyUsed" Type="int" Mode="In" />
+          <Parameter Name="AllowedDays" Type="int" Mode="In" />
+          <Parameter Name="ExpiryDate" Type="datetime" Mode="In" />
+          <Parameter Name="TicketData" Type="varchar" Mode="In" />
+          <Parameter Name="CreatedDate" Type="datetime" Mode="In" />
+          <Parameter Name="CreatedBy" Type="int" Mode="In" />
+          <Parameter Name="ModifiedDate" Type="datetime" Mode="In" />
+          <Parameter Name="ModifiedBy" Type="int" Mode="In" />
+          <Parameter Name="ErrorCode" Type="varchar" Mode="InOut" />
+          <Parameter Name="ErrorMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="InsertUserAccessLog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PKID" Type="int" Mode="InOut" />
+          <Parameter Name="UserID" Type="nvarchar" Mode="In" />
+          <Parameter Name="AccessDate" Type="datetime" Mode="In" />
+          <Parameter Name="Action" Type="varchar" Mode="In" />
+          <Parameter Name="CreatedDate" Type="datetime" Mode="In" />
+          <Parameter Name="CreatedBy" Type="int" Mode="In" />
+          <Parameter Name="ModifiedDate" Type="datetime" Mode="In" />
+          <Parameter Name="ModifiedBy" Type="int" Mode="In" />
+          <Parameter Name="ErrorCode" Type="varchar" Mode="InOut" />
+          <Parameter Name="ErrorMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="InsertUserInRole" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PKID" Type="int" Mode="InOut" />
+          <Parameter Name="UserID" Type="varchar" Mode="In" />
+          <Parameter Name="RoleName" Type="varchar" Mode="In" />
+          <Parameter Name="CreatedDate" Type="datetime" Mode="In" />
+          <Parameter Name="CreatedBy" Type="int" Mode="In" />
+          <Parameter Name="ModifiedDate" Type="datetime" Mode="In" />
+          <Parameter Name="ModifiedBy" Type="int" Mode="In" />
+          <Parameter Name="ErrorCode" Type="varchar" Mode="InOut" />
+          <Parameter Name="ErrorMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="InsertZone" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PKID" Type="int" Mode="InOut" />
+          <Parameter Name="ZoneID" Type="varchar" Mode="In" />
+          <Parameter Name="ZoneGroupID" Type="varchar" Mode="In" />
+          <Parameter Name="ZoneName" Type="varchar" Mode="In" />
+          <Parameter Name="Address" Type="varchar" Mode="In" />
+          <Parameter Name="Phone" Type="varchar" Mode="In" />
+          <Parameter Name="Incharge" Type="varchar" Mode="In" />
+          <Parameter Name="CreatedBy" Type="int" Mode="In" />
+          <Parameter Name="CreatedDate" Type="datetime" Mode="In" />
+          <Parameter Name="ModifiedBy" Type="int" Mode="In" />
+          <Parameter Name="ModifiedDate" Type="datetime" Mode="In" />
+          <Parameter Name="ErrorCode" Type="varchar" Mode="InOut" />
+          <Parameter Name="ErrorMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="InsertZoneAndZoneGroup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PKID" Type="int" Mode="InOut" />
+          <Parameter Name="ZoneID" Type="varchar" Mode="In" />
+          <Parameter Name="ZoneGroupID" Type="varchar" Mode="In" />
+          <Parameter Name="CreatedBy" Type="int" Mode="In" />
+          <Parameter Name="CreatedDate" Type="datetime" Mode="In" />
+          <Parameter Name="ModifiedBy" Type="int" Mode="In" />
+          <Parameter Name="ModifiedDate" Type="datetime" Mode="In" />
+          <Parameter Name="ErrorCode" Type="varchar" Mode="InOut" />
+          <Parameter Name="ErrorMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="InsertZoneGroup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PKID" Type="int" Mode="InOut" />
+          <Parameter Name="ZoneGroupID" Type="varchar" Mode="In" />
+          <Parameter Name="ZoneGroupName" Type="varchar" Mode="In" />
+          <Parameter Name="DaysAllowed" Type="int" Mode="In" />
+          <Parameter Name="EntriesAllowed" Type="int" Mode="In" />
+          <Parameter Name="Price" Type="decimal" Mode="In" />
+          <Parameter Name="CreatedBy" Type="int" Mode="In" />
+          <Parameter Name="CreatedDate" Type="datetime" Mode="In" />
+          <Parameter Name="ModifiedBy" Type="int" Mode="In" />
+          <Parameter Name="ModifiedDate" Type="datetime" Mode="In" />
+          <Parameter Name="ErrorCode" Type="varchar" Mode="InOut" />
+          <Parameter Name="ErrorMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="RetrieveTicketActivationLog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ErrorCode" Type="varchar" Mode="InOut" />
+          <Parameter Name="ErrorMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="RetrieveTicketUsageLog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ErrorCode" Type="varchar" Mode="InOut" />
+          <Parameter Name="ErrorMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="SelectCounter" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SelectCounterDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SelectDistinctZoneGroup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SelectExceptionLog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SelectMaxPKID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SelectNewCounterID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SelectNewTicketID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SelectPrintingApproved" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SelectRole" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SelectSample" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SelectTicket" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SelectTicketCollectionsUsingFilters" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TicketSerialFrom" Type="int" Mode="In" />
+          <Parameter Name="TicketSerialTo" Type="int" Mode="In" />
+          <Parameter Name="ZoneGroup" Type="varchar" Mode="In" />
+          <Parameter Name="TicketStatus" Type="varchar" Mode="In" />
+          <Parameter Name="CreatedDateFrom" Type="datetime" Mode="In" />
+          <Parameter Name="CreatedDateTo" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="SelectTicketDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SelectTicketInZone" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SelectTicketSetting" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SelectTicketUnused" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SelectTicketUsage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SelectUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SelectUserAccessLog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SelectUserAccessLogByUserID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SelectUserCollectionUsingFilters" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserStatus" Type="varchar" Mode="In" />
+          <Parameter Name="DisplayName" Type="varchar" Mode="In" />
+          <Parameter Name="LoginDateFrom" Type="datetime" Mode="In" />
+          <Parameter Name="LoginDateTo" Type="datetime" Mode="In" />
+          <Parameter Name="CreatedDateFrom" Type="datetime" Mode="In" />
+          <Parameter Name="CreatedDateTo" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="SelectUserInRole" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SelectZone" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SelectZoneAndZoneGroup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SelectZoneGroup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SelectZoneSetting" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="UpdateCounter" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PKID" Type="int" Mode="In" />
+          <Parameter Name="CounterID" Type="int" Mode="In" />
+          <Parameter Name="ZoneID" Type="int" Mode="In" />
+          <Parameter Name="ErrorCode" Type="varchar" Mode="InOut" />
+          <Parameter Name="ErrorMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="UpdateTicket" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PKID" Type="int" Mode="InOut" />
+          <Parameter Name="Price" Type="decimal" Mode="In" />
+          <Parameter Name="TicketStatus" Type="varchar" Mode="In" />
+          <Parameter Name="AllowedUsage" Type="int" Mode="In" />
+          <Parameter Name="AlreadyUsed" Type="int" Mode="In" />
+          <Parameter Name="AllowedDays" Type="int" Mode="In" />
+          <Parameter Name="ExpiryDate" Type="datetime" Mode="In" />
+          <Parameter Name="ModifiedDate" Type="datetime" Mode="In" />
+          <Parameter Name="ModifiedBy" Type="int" Mode="In" />
+          <Parameter Name="CreatedDate" Type="datetime" Mode="In" />
+          <Parameter Name="CreatedBy" Type="int" Mode="In" />
+          <Parameter Name="ErrorCode" Type="varchar" Mode="InOut" />
+          <Parameter Name="ErrorMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="UpdateTicketStatus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PKID" Type="int" Mode="In" />
+          <Parameter Name="TicketStatus" Type="varchar" Mode="In" />
+          <Parameter Name="ModifiedBy" Type="int" Mode="In" />
+          <Parameter Name="ModifiedDate" Type="datetime" Mode="In" />
+          <Parameter Name="ErrorCode" Type="varchar" Mode="InOut" />
+          <Parameter Name="ErrorMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="UpdateTicketUnused" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PKID" Type="int" Mode="InOut" />
+          <Parameter Name="SerialNo" Type="varchar" Mode="In" />
+          <Parameter Name="Reason" Type="nvarchar" Mode="In" />
+          <Parameter Name="ModifiedBy" Type="int" Mode="In" />
+          <Parameter Name="ModifiedDate" Type="datetime" Mode="In" />
+          <Parameter Name="ErrorCode" Type="varchar" Mode="InOut" />
+          <Parameter Name="ErrorMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="UpdateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserID" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+          <Parameter Name="DisplayName" Type="varchar" Mode="In" />
+          <Parameter Name="Position" Type="varchar" Mode="In" />
+          <Parameter Name="Status" Type="varchar" Mode="In" />
+          <Parameter Name="ModifiedDate" Type="datetime" Mode="In" />
+          <Parameter Name="ModifiedBy" Type="int" Mode="In" />
+          <Parameter Name="ErrorCode" Type="varchar" Mode="InOut" />
+          <Parameter Name="ErrorMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="UpdateUserInRole" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PKID" Type="int" Mode="InOut" />
+          <Parameter Name="UserID" Type="varchar" Mode="In" />
+          <Parameter Name="RoleName" Type="varchar" Mode="In" />
+          <Parameter Name="ModifiedDate" Type="datetime" Mode="In" />
+          <Parameter Name="ModifiedBy" Type="int" Mode="In" />
+          <Parameter Name="ErrorCode" Type="varchar" Mode="InOut" />
+          <Parameter Name="ErrorMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="UpdateZone" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PKID" Type="int" Mode="In" />
+          <Parameter Name="LinkID" Type="int" Mode="In" />
+          <Parameter Name="ZoneID" Type="varchar" Mode="In" />
+          <Parameter Name="ZoneGroupID" Type="varchar" Mode="In" />
+          <Parameter Name="ZoneName" Type="varchar" Mode="In" />
+          <Parameter Name="Address" Type="varchar" Mode="In" />
+          <Parameter Name="Phone" Type="varchar" Mode="In" />
+          <Parameter Name="Incharge" Type="varchar" Mode="In" />
+          <Parameter Name="ModifiedBy" Type="int" Mode="In" />
+          <Parameter Name="ModifiedDate" Type="datetime" Mode="In" />
+          <Parameter Name="ErrorCode" Type="varchar" Mode="InOut" />
+          <Parameter Name="ErrorMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="UpdateZoneAndZoneGroup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PKID" Type="int" Mode="In" />
+          <Parameter Name="ZoneGroupID" Type="varchar" Mode="In" />
+          <Parameter Name="ZoneID" Type="varchar" Mode="In" />
+          <Parameter Name="ModifiedBy" Type="int" Mode="In" />
+          <Parameter Name="ModifiedDate" Type="datetime" Mode="In" />
+          <Parameter Name="ErrorCode" Type="varchar" Mode="InOut" />
+          <Parameter Name="ErrorMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="UpdateZoneGroup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PKID" Type="int" Mode="In" />
+          <Parameter Name="ZoneGroupID" Type="varchar" Mode="In" />
+          <Parameter Name="ZoneGroupName" Type="varchar" Mode="In" />
+          <Parameter Name="DaysAllowed" Type="int" Mode="In" />
+          <Parameter Name="EntriesAllowed" Type="int" Mode="In" />
+          <Parameter Name="Price" Type="decimal" Mode="In" />
+          <Parameter Name="ModifiedBy" Type="int" Mode="In" />
+          <Parameter Name="ModifiedDate" Type="datetime" Mode="In" />
+          <Parameter Name="ErrorCode" Type="varchar" Mode="InOut" />
+          <Parameter Name="ErrorMsg" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="UserLogIn" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserID" Type="nvarchar" Mode="In" />
+          <Parameter Name="Password" Type="nvarchar" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="TouristTicket" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="TouristTicketContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="SampleObjects" EntityType="TouristTicket.SampleObject" />
+          <FunctionImport Name="InsertSample" ReturnType="Collection(Int32)">
+            <Parameter Name="PKID" Mode="InOut" Type="Int32" />
+            <Parameter Name="SampleData" Mode="In" Type="String" />
+            <Parameter Name="ErrorCode" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateSample" ReturnType="Collection(Int32)">
+            <Parameter Name="PKID" Mode="In" Type="Int32" />
+            <Parameter Name="SampleData" Mode="In" Type="String" />
+            <Parameter Name="ErrorCode" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SelectSample" EntitySet="SampleObjects" ReturnType="Collection(TouristTicket.SampleObject)" />
+          <FunctionImport Name="SelectUser" EntitySet="Users" ReturnType="Collection(TouristTicket.User)" >
+            </FunctionImport>
+          <EntitySet Name="Users" EntityType="TouristTicket.User" />
+          <FunctionImport Name="UserLogIn" EntitySet="Users" ReturnType="Collection(TouristTicket.User)">
+            <Parameter Name="UserID" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="Roles" EntityType="TouristTicket.Role" />
+          <EntitySet Name="UserInRoles" EntityType="TouristTicket.UserInRole" />
+          <FunctionImport Name="SelectRole" EntitySet="Roles" ReturnType="Collection(TouristTicket.Role)" />
+          <FunctionImport Name="InsertUserAccessLog" ReturnType="Collection(Int32)">
+            <Parameter Name="PKID" Mode="InOut" Type="Int32" />
+            <Parameter Name="UserID" Mode="In" Type="String" />
+            <Parameter Name="AccessDate" Mode="In" Type="DateTime" />
+            <Parameter Name="Action" Mode="In" Type="String" />
+            <Parameter Name="CreatedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="CreatedBy" Mode="In" Type="Int32" />
+            <Parameter Name="ModifiedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ModifiedBy" Mode="In" Type="Int32" />
+            <Parameter Name="ErrorCode" Mode="InOut" Type="String" />
+            <Parameter Name="ErrorMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectUserAccessLog" EntitySet="UserAccessLogs" ReturnType="Collection(TouristTicket.UserAccessLog)" />
+          <FunctionImport Name="SelectUserAccessLogByUserID" EntitySet="UserAccessLogs" ReturnType="Collection(TouristTicket.UserAccessLog)">
+          <Parameter Name="UserID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="InsertUserInRole" ReturnType="Collection(Int32)">
+            <Parameter Name="PKID" Mode="InOut" Type="Int32" />
+            <Parameter Name="UserID" Mode="In" Type="String" />
+            <Parameter Name="RoleName" Mode="In" Type="String" />
+            <Parameter Name="CreatedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="CreatedBy" Mode="In" Type="Int32" />
+            <Parameter Name="ModifiedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ModifiedBy" Mode="In" Type="Int32" />
+            <Parameter Name="ErrorCode" Mode="InOut" Type="String" />
+            <Parameter Name="ErrorMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateUser" ReturnType="Collection(Int32)">
+            <Parameter Name="UserID" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="DisplayName" Mode="In" Type="String" />
+            <Parameter Name="Position" Mode="In" Type="String" />
+            <Parameter Name="Status" Mode="In" Type="String" />
+            <Parameter Name="ModifiedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ModifiedBy" Mode="In" Type="Int32" />
+            <Parameter Name="ErrorCode" Mode="InOut" Type="String" />
+            <Parameter Name="ErrorMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateUserInRole" ReturnType="Collection(Int32)">
+            <Parameter Name="PKID" Mode="InOut" Type="Int32" />
+            <Parameter Name="UserID" Mode="In" Type="String" />
+            <Parameter Name="RoleName" Mode="In" Type="String" />
+            <Parameter Name="ModifiedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ModifiedBy" Mode="In" Type="Int32" />
+            <Parameter Name="ErrorCode" Mode="InOut" Type="String" />
+            <Parameter Name="ErrorMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="InsertNewUser" ReturnType="Collection(Int32)">
+            <Parameter Name="PKID" Mode="InOut" Type="Int32" />
+            <Parameter Name="UserID" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="DisplayName" Mode="In" Type="String" />
+            <Parameter Name="Position" Mode="In" Type="String" />
+            <Parameter Name="Status" Mode="In" Type="String" />
+            <Parameter Name="CreatedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="CreatedBy" Mode="In" Type="Int32" />
+            <Parameter Name="ModifiedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ModifiedBy" Mode="In" Type="Int32" />
+            <Parameter Name="ErrorCode" Mode="InOut" Type="String" />
+            <Parameter Name="ErrorMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="ExceptionLogs" EntityType="TouristTicket.ExceptionLog" />
+          <FunctionImport Name="InsertExceptionLog" ReturnType="Collection(Int32)">
+            <Parameter Name="PKID" Mode="InOut" Type="Int32" />
+            <Parameter Name="ErrorMessage" Mode="In" Type="String" />
+            <Parameter Name="StackTrace" Mode="In" Type="String" />
+            <Parameter Name="CreatedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ErrorCode" Mode="InOut" Type="String" />
+            <Parameter Name="ErrorMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="TransactionLogs" EntityType="TouristTicket.TransactionLog" />
+          <FunctionImport Name="InsertTransactionLog" ReturnType="Collection(Int32)">
+            <Parameter Name="PKID" Mode="InOut" Type="Int32" />
+            <Parameter Name="TransactionType" Mode="In" Type="String" />
+            <Parameter Name="TransactionDate" Mode="In" Type="DateTime" />
+            <Parameter Name="Data" Mode="In" Type="String" />
+            <Parameter Name="ErrorCode" Mode="InOut" Type="String" />
+            <Parameter Name="ErrorMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="TicketInZones" EntityType="TouristTicket.TicketInZone" />
+          <EntitySet Name="TicketUsages" EntityType="TouristTicket.TicketUsage" />
+          <FunctionImport Name="InsertNewTicket" ReturnType="Collection(Int32)">
+            <Parameter Name="PKID" Mode="In" Type="Int32" />
+            <Parameter Name="ZoneGroupID" Mode="In" Type="String" />
+            <Parameter Name="Price" Mode="In" Type="Decimal" />
+            <Parameter Name="TicketStatus" Mode="In" Type="String" />
+            <Parameter Name="AllowedUsage" Mode="In" Type="Int32" />
+            <Parameter Name="AlreadyUsed" Mode="In" Type="Int32" />
+            <Parameter Name="AllowedDays" Mode="In" Type="Int32" />
+            <Parameter Name="ExpiryDate" Mode="In" Type="DateTime" />
+            <Parameter Name="TicketData" Mode="In" Type="String" />
+            <Parameter Name="CreatedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="CreatedBy" Mode="In" Type="Int32" />
+            <Parameter Name="ModifiedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ModifiedBy" Mode="In" Type="Int32" />
+            <Parameter Name="ErrorCode" Mode="InOut" Type="String" />
+            <Parameter Name="ErrorMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="InsertTicketInZone" ReturnType="Collection(Int32)">
+            <Parameter Name="PKID" Mode="InOut" Type="Int32" />
+            <Parameter Name="TicketID" Mode="In" Type="String" />
+            <Parameter Name="ZoneGroupID" Mode="In" Type="String" />
+            <Parameter Name="CreatedBy" Mode="In" Type="Int32" />
+            <Parameter Name="CreatedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ModifiedBy" Mode="In" Type="Int32" />
+            <Parameter Name="ModifiedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ErrorCode" Mode="InOut" Type="String" />
+            <Parameter Name="ErrorMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="InsertTicketUsage" ReturnType="Collection(Int32)">
+            <Parameter Name="PKID" Mode="InOut" Type="Int32" />
+            <Parameter Name="TicketID" Mode="In" Type="Int32" />
+            <Parameter Name="ZoneID" Mode="In" Type="Int32" />
+            <Parameter Name="DateUsed" Mode="In" Type="DateTime" />
+            <Parameter Name="ErrorCode" Mode="InOut" Type="String" />
+            <Parameter Name="ErrorMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="InsertZone" ReturnType="Collection(Int32)">
+            <Parameter Name="PKID" Mode="InOut" Type="Int32" />
+            <Parameter Name="ZoneID" Mode="In" Type="String" />
+            <Parameter Name="ZoneGroupID" Mode="In" Type="String" />
+            <Parameter Name="ZoneName" Mode="In" Type="String" />
+            <Parameter Name="Address" Mode="In" Type="String" />
+            <Parameter Name="Phone" Mode="In" Type="String" />
+            <Parameter Name="Incharge" Mode="In" Type="String" />
+            <Parameter Name="CreatedBy" Mode="In" Type="Int32" />
+            <Parameter Name="CreatedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ModifiedBy" Mode="In" Type="Int32" />
+            <Parameter Name="ModifiedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ErrorCode" Mode="InOut" Type="String" />
+            <Parameter Name="ErrorMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectTicketInZone" EntitySet="TicketInZones" ReturnType="Collection(TouristTicket.TicketInZone)" />
+          <FunctionImport Name="SelectTicketUsage" EntitySet="TicketUsages" ReturnType="Collection(TouristTicket.TicketUsage)" />
+          <FunctionImport Name="UpdateTicket" ReturnType="Collection(Int32)">
+            <Parameter Name="PKID" Mode="InOut" Type="Int32" />
+            <Parameter Name="Price" Mode="In" Type="Decimal" />
+            <Parameter Name="TicketStatus" Mode="In" Type="String" />
+            <Parameter Name="AllowedUsage" Mode="In" Type="Int32" />
+            <Parameter Name="AlreadyUsed" Mode="In" Type="Int32" />
+            <Parameter Name="AllowedDays" Mode="In" Type="Int32" />
+            <Parameter Name="ExpiryDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ModifiedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ModifiedBy" Mode="In" Type="Int32" />
+            <Parameter Name="CreatedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="CreatedBy" Mode="In" Type="Int32" />
+            <Parameter Name="ErrorCode" Mode="InOut" Type="String" />
+            <Parameter Name="ErrorMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="Zones" EntityType="TouristTicket.Zone" />
+          <EntitySet Name="ZoneGroups" EntityType="TouristTicket.ZoneGroup" />
+          <FunctionImport Name="SelectZone" EntitySet="Zones" ReturnType="Collection(TouristTicket.Zone)" />
+          <FunctionImport Name="DeleteZone" ReturnType="Collection(Int32)">
+            <Parameter Name="ZoneID" Mode="In" Type="String" />
+            <Parameter Name="ErrorCode" Mode="InOut" Type="String" />
+            <Parameter Name="ErrorMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateZone" ReturnType="Collection(Int32)">
+            <Parameter Name="PKID" Mode="In" Type="Int32" />
+            <Parameter Name="LinkID" Mode="In" Type="Int32" />
+            <Parameter Name="ZoneID" Mode="In" Type="String" />
+            <Parameter Name="ZoneGroupID" Mode="In" Type="String" />
+            <Parameter Name="ZoneName" Mode="In" Type="String" />
+            <Parameter Name="Address" Mode="In" Type="String" />
+            <Parameter Name="Phone" Mode="In" Type="String" />
+            <Parameter Name="Incharge" Mode="In" Type="String" />
+            <Parameter Name="ModifiedBy" Mode="In" Type="Int32" />
+            <Parameter Name="ModifiedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ErrorCode" Mode="InOut" Type="String" />
+            <Parameter Name="ErrorMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateZoneGroup" ReturnType="Collection(Int32)">
+            <Parameter Name="PKID" Mode="In" Type="Int32" />
+            <Parameter Name="ZoneGroupID" Mode="In" Type="String" />
+            <Parameter Name="ZoneGroupName" Mode="In" Type="String" />
+            <Parameter Name="DaysAllowed" Mode="In" Type="Int32" />
+            <Parameter Name="EntriesAllowed" Mode="In" Type="Int32" />
+            <Parameter Name="Price" Mode="In" Type="Decimal" />
+            <Parameter Name="ModifiedBy" Mode="In" Type="Int32" />
+            <Parameter Name="ModifiedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ErrorCode" Mode="InOut" Type="String" />
+            <Parameter Name="ErrorMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="DeleteZoneGroup" ReturnType="Collection(Int32)">
+            <Parameter Name="ZoneGroupID" Mode="In" Type="String" />
+            <Parameter Name="ErrorCode" Mode="InOut" Type="String" />
+            <Parameter Name="ErrorMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="InsertTicketSetting" ReturnType="Collection(Int32)">
+            <Parameter Name="PKID" Mode="InOut" Type="Int32" />
+            <Parameter Name="TicketZoneID" Mode="In" Type="String" />
+            <Parameter Name="DaysAllowed" Mode="In" Type="Int32" />
+            <Parameter Name="EntryAllowed" Mode="In" Type="Int32" />
+            <Parameter Name="Price" Mode="In" Type="Decimal" />
+            <Parameter Name="CreatedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="CreatedBy" Mode="In" Type="Int32" />
+            <Parameter Name="ModifiedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ModifiedBy" Mode="In" Type="Int32" />
+            <Parameter Name="ErrorCode" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SelectTicketSetting" EntitySet="TicketSettings" ReturnType="Collection(TouristTicket.TicketSetting)" />
+          <FunctionImport Name="InsertZoneGroup" ReturnType="Collection(Int32)">
+            <Parameter Name="PKID" Mode="InOut" Type="Int32" />
+            <Parameter Name="ZoneGroupID" Mode="In" Type="String" />
+            <Parameter Name="ZoneGroupName" Mode="In" Type="String" />
+            <Parameter Name="DaysAllowed" Mode="In" Type="Int32" />
+            <Parameter Name="EntriesAllowed" Mode="In" Type="Int32" />
+            <Parameter Name="Price" Mode="In" Type="Decimal" />
+            <Parameter Name="CreatedBy" Mode="In" Type="Int32" />
+            <Parameter Name="CreatedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ModifiedBy" Mode="In" Type="Int32" />
+            <Parameter Name="ModifiedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ErrorCode" Mode="InOut" Type="String" />
+            <Parameter Name="ErrorMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectZoneGroup" EntitySet="ZoneGroups" ReturnType="Collection(TouristTicket.ZoneGroup)" />
+          <EntitySet Name="ZoneAndZoneGroups" EntityType="TouristTicket.ZoneAndZoneGroup" />
+          <FunctionImport Name="SelectZoneAndZoneGroup" EntitySet="ZoneAndZoneGroups" ReturnType="Collection(TouristTicket.ZoneAndZoneGroup)" />
+          <FunctionImport Name="SelectTicket" EntitySet="Tickets" ReturnType="Collection(TouristTicket.Ticket)" />
+          <FunctionImport Name="DeleteTicketSettings" ReturnType="Collection(Int32)">
+            <Parameter Name="TicketZoneID" Mode="In" Type="String" />
+            <Parameter Name="ErrorCode" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateTicketSetting" ReturnType="Collection(Int32)">
+            <Parameter Name="TicketZoneID" Mode="In" Type="String" />
+            <Parameter Name="DaysAllowed" Mode="In" Type="Int32" />
+            <Parameter Name="EntryAllowed" Mode="In" Type="Int32" />
+            <Parameter Name="Price" Mode="In" Type="Decimal" />
+            <Parameter Name="ModifiedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ModifiedBy" Mode="In" Type="Int32" />
+            <Parameter Name="ErrorCode" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="DeleteUserByUserID" ReturnType="Collection(Int32)">
+            <Parameter Name="UserID" Mode="In" Type="String" />
+            <Parameter Name="ErrorCode" Mode="InOut" Type="String" />
+            <Parameter Name="ErrorMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectUserInRole" EntitySet="UserInRoles" ReturnType="Collection(TouristTicket.UserInRole)" />
+          <FunctionImport Name="DeleteUserInRole" ReturnType="Collection(Int32)">
+            <Parameter Name="UserID" Mode="In" Type="String" />
+            <Parameter Name="ErrorCode" Mode="InOut" Type="String" />
+            <Parameter Name="ErrorMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="InsertZoneAndZoneGroup" ReturnType="Collection(Int32)">
+            <Parameter Name="PKID" Mode="InOut" Type="Int32" />
+            <Parameter Name="ZoneID" Mode="In" Type="String" />
+            <Parameter Name="ZoneGroupID" Mode="In" Type="String" />
+            <Parameter Name="CreatedBy" Mode="In" Type="Int32" />
+            <Parameter Name="CreatedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ModifiedBy" Mode="In" Type="Int32" />
+            <Parameter Name="ModifiedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ErrorCode" Mode="InOut" Type="String" />
+            <Parameter Name="ErrorMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="Counters" EntityType="TouristTicket.Counter" />
+          <EntitySet Name="Tickets" EntityType="TouristTicket.Ticket" />
+          <EntitySet Name="TicketSettings" EntityType="TouristTicket.TicketSetting" />
+          <FunctionImport Name="UpdateTicketStatus" ReturnType="Collection(Int32)">
+            <Parameter Name="PKID" Mode="In" Type="Int32" />
+            <Parameter Name="TicketStatus" Mode="In" Type="String" />
+            <Parameter Name="ModifiedBy" Mode="In" Type="Int32" />
+            <Parameter Name="ModifiedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ErrorCode" Mode="InOut" Type="String" />
+            <Parameter Name="ErrorMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="TicketDetails" EntityType="TouristTicket.TicketDetail" />
+          <FunctionImport Name="SelectTicketDetails" EntitySet="TicketDetails" ReturnType="Collection(TouristTicket.TicketDetail)" />
+          <FunctionImport Name="SelectNewTicketID" ReturnType="Collection(Int32)" />
+          <FunctionImport Name="InsertTicketUnused" ReturnType="Collection(Int32)">
+            <Parameter Name="PKID" Mode="InOut" Type="Int32" />
+            <Parameter Name="SerialNo" Mode="In" Type="String" />
+            <Parameter Name="Reason" Mode="In" Type="String" />
+            <Parameter Name="CreatedBy" Mode="In" Type="Int32" />
+            <Parameter Name="CreatedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ModifiedBy" Mode="In" Type="Int32" />
+            <Parameter Name="ModifiedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ErrorCode" Mode="InOut" Type="String" />
+            <Parameter Name="ErrorMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectTicketUnused" EntitySet="TicketUnuseds" ReturnType="Collection(TouristTicket.TicketUnused)" />
+          <FunctionImport Name="UpdateTicketUnused" ReturnType="Collection(Int32)">
+            <Parameter Name="PKID" Mode="InOut" Type="Int32" />
+            <Parameter Name="SerialNo" Mode="In" Type="String" />
+            <Parameter Name="Reason" Mode="In" Type="String" />
+            <Parameter Name="ModifiedBy" Mode="In" Type="Int32" />
+            <Parameter Name="ModifiedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ErrorCode" Mode="InOut" Type="String" />
+            <Parameter Name="ErrorMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="DeleteTicketDamages" ReturnType="Collection(Int16)">
+          <Parameter Name="SerialNo" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="TicketUnuseds" EntityType="TouristTicket.TicketUnused" />
+          <EntitySet Name="TicketActivationLogs" EntityType="TouristTicket.TicketActivationLog" />
+          <EntitySet Name="TicketUsageLogs" EntityType="TouristTicket.TicketUsageLog" />
+          <FunctionImport Name="InsertTicketActivationLog" ReturnType="Collection(Int32)">
+            <Parameter Name="CounterID" Mode="In" Type="Int32" />
+            <Parameter Name="ZoneID" Mode="In" Type="Int32" />
+            <Parameter Name="TicketID" Mode="In" Type="Int32" />
+            <Parameter Name="TransactionID" Mode="In" Type="Guid" />
+            <Parameter Name="ActivatedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ErrorCode" Mode="InOut" Type="String" />
+            <Parameter Name="ErrorMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="InsertTicketUsageLog" ReturnType="Collection(Int32)">
+            <Parameter Name="CounterID" Mode="In" Type="Int32" />
+            <Parameter Name="ZoneID" Mode="In" Type="Int32" />
+            <Parameter Name="TicketID" Mode="In" Type="Int32" />
+            <Parameter Name="DateUsed" Mode="In" Type="DateTime" />
+            <Parameter Name="UsageCountBefore" Mode="In" Type="Int32" />
+            <Parameter Name="TransactionID" Mode="In" Type="Guid" />
+            <Parameter Name="UsageCountAfter" Mode="In" Type="Int32" />
+            <Parameter Name="ErrorCode" Mode="InOut" Type="String" />
+            <Parameter Name="ErrorMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="RetrieveTicketActivationLog" EntitySet="TicketActivationLogs" ReturnType="Collection(TouristTicket.TicketActivationLog)">
+            <Parameter Name="ErrorCode" Mode="InOut" Type="String" />
+            <Parameter Name="ErrorMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="RetrieveTicketUsageLog" EntitySet="TicketUsageLogs" ReturnType="Collection(TouristTicket.TicketUsageLog)">
+            <Parameter Name="ErrorCode" Mode="InOut" Type="String" />
+            <Parameter Name="ErrorMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="DownloadData" EntitySet="Tickets" ReturnType="Collection(TouristTicket.Ticket)">
+            <Parameter Name="CounterID" Mode="In" Type="Int32" />
+            <Parameter Name="NumOfRecords" Mode="In" Type="Int32" />
+            <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+            <Parameter Name="ErrorCode" Mode="InOut" Type="String" />
+            <Parameter Name="ErrorMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="InsertCounter" ReturnType="Collection(Int32)">
+            <Parameter Name="PKID" Mode="InOut" Type="Int32" />
+            <Parameter Name="CounterID" Mode="In" Type="Int32" />
+            <Parameter Name="ZoneID" Mode="In" Type="Int32" />
+            <Parameter Name="CreatedBy" Mode="In" Type="Int32" />
+            <Parameter Name="CreatedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ErrorCode" Mode="InOut" Type="String" />
+            <Parameter Name="ErrorMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="DeleteCounter" ReturnType="Collection(Int32)">
+            <Parameter Name="CounterID" Mode="In" Type="Int32" />
+            <Parameter Name="ErrorCode" Mode="InOut" Type="String" />
+            <Parameter Name="ErrorMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectCounter" EntitySet="Counters" ReturnType="Collection(TouristTicket.Counter)" />
+          <FunctionImport Name="UpdateCounter" ReturnType="Collection(Int32)">
+            <Parameter Name="PKID" Mode="In" Type="Int32" />
+            <Parameter Name="CounterID" Mode="In" Type="Int32" />
+            <Parameter Name="ZoneID" Mode="In" Type="Int32" />
+            <Parameter Name="ErrorCode" Mode="InOut" Type="String" />
+            <Parameter Name="ErrorMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="ExportFromServer" EntitySet="Tickets" ReturnType="Collection(TouristTicket.Ticket)">
+            <Parameter Name="CounterID" Mode="In" Type="Int32" />
+            <Parameter Name="ErrorCode" Mode="InOut" Type="String" />
+            <Parameter Name="ErrorMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectNewCounterID" ReturnType="Collection(Int32)" />
+          <EntitySet Name="CounterAndZones" EntityType="TouristTicket.CounterAndZone" />
+          <FunctionImport Name="SelectCounterDetail" EntitySet="CounterAndZones" ReturnType="Collection(TouristTicket.CounterAndZone)" />
+          <FunctionImport Name="SelectTicketCollectionsUsingFilters" EntitySet="TicketDetails" ReturnType="Collection(TouristTicket.TicketDetail)">
+            <Parameter Name="TicketSerialFrom" Mode="In" Type="Int32" />
+            <Parameter Name="TicketSerialTo" Mode="In" Type="Int32" />
+            <Parameter Name="ZoneGroup" Mode="In" Type="String" />
+            <Parameter Name="TicketStatus" Mode="In" Type="String" />
+            <Parameter Name="CreatedDateFrom" Mode="In" Type="DateTime" />
+            <Parameter Name="CreatedDateTo" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="SelectUserCollectionUsingFilters" EntitySet="UserAccessLogs" ReturnType="Collection(TouristTicket.UserAccessLog)">
+            <Parameter Name="UserStatus" Mode="In" Type="String" />
+            <Parameter Name="DisplayName" Mode="In" Type="String" />
+            <Parameter Name="LoginDateFrom" Mode="In" Type="DateTime" />
+            <Parameter Name="LoginDateTo" Mode="In" Type="DateTime" />
+            <Parameter Name="CreatedDateFrom" Mode="In" Type="DateTime" />
+            <Parameter Name="CreatedDateTo" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <EntitySet Name="UserAccessLogs" EntityType="TouristTicket.UserAccessLog" />
+          <FunctionImport Name="SelectDistinctZoneGroup" EntitySet="DistinctZoneGroupNames" ReturnType="Collection(TouristTicket.DistinctZoneGroupName)" />
+          <EntitySet Name="DistinctZoneGroupNames" EntityType="TouristTicket.DistinctZoneGroupName" />
+          <EntitySet Name="PrintingApproveds" EntityType="TouristTicket.PrintingApproved" />
+          <FunctionImport Name="InsertPrintingCode" ReturnType="Collection(Int32)">
+            <Parameter Name="ApprovedCode" Mode="In" Type="String" />
+            <Parameter Name="ErrorCode" Mode="InOut" Type="String" />
+            <Parameter Name="ErrorMsg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectPrintingApproved" EntitySet="PrintingApproveds" ReturnType="Collection(TouristTicket.PrintingApproved)" />
+          <FunctionImport Name="DeletePrintingCode" ReturnType="Collection(Int32)" />
+        </EntityContainer>
+        <EntityType Name="SampleObject">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Type="Int32" Name="PKID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SampleColumn" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <ComplexType Name="UserLogIn_Result">
+          <Property Type="String" Name="UserID" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="20" />
+        </ComplexType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Type="String" Name="UserID" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="PKID" Nullable="false" />
+          <Property Type="String" Name="DisplayName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Status" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+          <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+          <Property Type="DateTime" Name="ModifiedDate" Nullable="false" />
+          <Property Type="Int32" Name="ModifiedBy" Nullable="false" />
+          <Property Type="String" Name="Position" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Type="Int32" Name="PKID" Nullable="false" />
+          <Property Type="String" Name="RoleName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="RoleDescription" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="UserInRole">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Type="Int32" Name="PKID" Nullable="false" />
+          <Property Type="String" Name="UserID" Nullable="false" MaxLength="50" FixedLength="false" />
+          <Property Type="Int32" Name="RoleID" Nullable="false" />
+          <Property Type="String" Name="RoleName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="RoleDescription" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DisplayName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Status" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="UserPKID" Nullable="false" />
+          <Property Type="String" Name="Position" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ExceptionLog">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Type="Int32" Name="PKID" Nullable="false" />
+          <Property Type="String" Name="ErrorMessage" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="StackTrace" MaxLength="512" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TransactionLog">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Type="Int32" Name="PKID" Nullable="false" />
+          <Property Type="String" Name="TransactionType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="TransactionDate" Nullable="false" />
+          <Property Type="String" Name="Data" MaxLength="512" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TicketInZone">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Type="Int32" Name="PKID" Nullable="false" />
+          <Property Type="Int32" Name="TicketID" Nullable="false" />
+          <Property Type="Int32" Name="ZoneID" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+          <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+          <Property Type="DateTime" Name="ModifiedDate" Nullable="false" />
+          <Property Type="Int32" Name="ModifiedBy" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TicketUsage">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Type="Int32" Name="PKID" Nullable="false" />
+          <Property Type="Int32" Name="TicketID" Nullable="false" />
+          <Property Type="Int32" Name="ZoneID" Nullable="false" />
+          <Property Type="DateTime" Name="DateUsed" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Zone">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Type="Int32" Name="PKID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ZoneID" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ZoneName" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Address" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="InCharge" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Phone" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ZoneGroup">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Type="Int32" Name="PKID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ZoneGroupID" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Type="String" Name="ZoneGroupName" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Type="Int32" Name="DaysAllowed" Nullable="false" />
+          <Property Type="Int32" Name="EntriesAllowed" Nullable="false" />
+          <Property Type="Decimal" Name="Price" Precision="9" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ZoneAndZoneGroup">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Type="String" Name="ZoneID" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Type="String" Name="ZoneName" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ZoneGroupID" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ZoneGroupName" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="PKID" Nullable="false" />
+          <Property Type="Int32" Name="LinkID" />
+          <Property Type="String" Name="Address" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Phone" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="InCharge" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Counter">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Type="Int32" Name="CounterID" Nullable="false" />
+          <Property Type="Int32" Name="PKID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ZoneID" Nullable="false" />
+          <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ticket">
+          <Key>
+            <PropertyRef Name="PKID" />
+            <PropertyRef Name="IsActivated" />
+            <PropertyRef Name="AllowedDays" />
+          </Key>
+          <Property Type="Int32" Name="PKID" Nullable="false" />
+          <Property Type="Decimal" Name="Price" Nullable="false" Precision="9" Scale="2" />
+          <Property Type="String" Name="TicketStatus" Nullable="false" />
+          <Property Type="Int32" Name="AllowedUsage" Nullable="false" />
+          <Property Type="Int32" Name="AlreadyUsed" Nullable="false" />
+          <Property Type="String" Name="TicketData" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsActivated" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+          <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+          <Property Type="DateTime" Name="ModifiedDate" Nullable="false" />
+          <Property Type="Int32" Name="ModifiedBy" Nullable="false" />
+          <Property Type="DateTime" Name="ActivatedDate" />
+          <Property Type="Int32" Name="ActivatedBy" />
+          <Property Type="DateTime" Name="ExpiryDate" />
+          <Property Type="Int32" Name="AllowedDays" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TicketSetting">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Type="Int32" Name="PKID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="DaysAllowed" />
+          <Property Type="Int32" Name="EntryAllowed" />
+          <Property Type="Int32" Name="CreatedBy" />
+          <Property Type="DateTime" Name="CreatedDate" />
+          <Property Type="Int32" Name="ModifiedBy" />
+          <Property Type="DateTime" Name="ModifiedDate" />
+          <Property Type="Decimal" Name="Price" Precision="9" Scale="2" />
+          <Property Type="String" Name="ZoneGroupID" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TicketDetail">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Type="Int32" Name="PKID" Nullable="false" />
+          <Property Type="Decimal" Name="Price" Nullable="false" Precision="9" Scale="2" />
+          <Property Type="String" Name="TicketStatus" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ZoneGroupName" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+          <Property Type="String" Name="UserID" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="AllowedUsage" Nullable="false" />
+          <Property Type="Int32" Name="AllowedDays" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TicketUnused">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Type="Int32" Name="PKID" Nullable="false" />
+          <Property Type="String" Name="SerialNo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Reason" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+          <Property Type="Int32" Name="ModifiedBy" Nullable="false" />
+          <Property Type="DateTime" Name="ModifiedDate" Nullable="false" />
+          <Property Type="String" Name="UserID" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TicketActivationLog">
+          <Key>
+            <PropertyRef Name="PKID" />
+            <PropertyRef Name="CounterID" />
+            <PropertyRef Name="ZoneID" />
+          </Key>
+          <Property Type="Int32" Name="PKID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="CounterID" Nullable="false" />
+          <Property Type="Int32" Name="ZoneID" Nullable="false" />
+          <Property Type="Guid" Name="TransactionID" Nullable="false" />
+          <Property Type="Int32" Name="TicketID" Nullable="false" />
+          <Property Type="DateTime" Name="ActivatedDate" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TicketUsageLog">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Type="Int32" Name="PKID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="TicketID" Nullable="false" />
+          <Property Type="Int32" Name="ZoneID" Nullable="false" />
+          <Property Type="Int32" Name="CounterID" Nullable="false" />
+          <Property Type="Int32" Name="UsageCountBefore" Nullable="false" />
+          <Property Type="Int32" Name="UsageCountAfter" Nullable="false" />
+          <Property Type="DateTime" Name="DateUsed" Nullable="false" />
+          <Property Type="Guid" Name="TransactionID" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CounterAndZone">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Type="Int32" Name="ZoneID" Nullable="false" />
+          <Property Type="Int32" Name="ZoneGroupID" Nullable="false" />
+          <Property Type="String" Name="ZoneName" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ZoneGroupName" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="CounterID" Nullable="false" />
+          <Property Type="Int32" Name="PKID" Nullable="false" />
+          <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserAccessLog">
+          <Key>
+            <PropertyRef Name="PKID" />
+            <PropertyRef Name="UserPKID" />
+            <PropertyRef Name="AccessDate" />
+            <PropertyRef Name="Action" />
+            <PropertyRef Name="User_PKID" />
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="DisplayName" />
+            <PropertyRef Name="Status" />
+            <PropertyRef Name="CreatedDate" />
+          </Key>
+          <Property Type="Int32" Name="PKID" Nullable="false" />
+          <Property Type="Int32" Name="UserPKID" Nullable="false" />
+          <Property Type="DateTime" Name="AccessDate" Nullable="false" />
+          <Property Type="String" Name="Action" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="User_PKID" Nullable="false" />
+          <Property Type="String" Name="UserID" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DisplayName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Status" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DistinctZoneGroupName">
+          <Key>
+            <PropertyRef Name="ZoneGroupName" />
+          </Key>
+          <Property Type="String" Name="ZoneGroupName" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PrintingApproved">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ApprovedCode" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="TouristTicket" />
+        <Alias Key="Target" Value="TouristTicket.Store" />
+        <EntityContainerMapping CdmEntityContainer="TouristTicketContainer" StorageEntityContainer="TouristTicketStoreContainer">
+          <EntitySetMapping Name="SampleObjects">
+            <EntityTypeMapping TypeName="TouristTicket.SampleObject">
+              <MappingFragment StoreEntitySet="vwSampleObject">
+                <ScalarProperty Name="SampleColumn" ColumnName="SampleColumn" />
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SelectSample" FunctionName="TouristTicket.Store.SelectSample" />
+          <FunctionImportMapping FunctionImportName="SelectUser" FunctionName="TouristTicket.Store.SelectUser" />
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="TouristTicket.User">
+              <MappingFragment StoreEntitySet="vwUser">
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="UserLogIn" FunctionName="TouristTicket.Store.UserLogIn" />
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="TouristTicket.Role">
+              <MappingFragment StoreEntitySet="vwRole">
+                <ScalarProperty Name="RoleDescription" ColumnName="RoleDescription" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserInRoles">
+            <EntityTypeMapping TypeName="TouristTicket.UserInRole">
+              <MappingFragment StoreEntitySet="vwUserInRole">
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="UserPKID" ColumnName="UserPKID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="RoleDescription" ColumnName="RoleDescription" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SelectRole" FunctionName="TouristTicket.Store.SelectRole" />
+          <FunctionImportMapping FunctionImportName="InsertUserAccessLog" FunctionName="TouristTicket.Store.InsertUserAccessLog" />
+          <FunctionImportMapping FunctionImportName="SelectUserAccessLog" FunctionName="TouristTicket.Store.SelectUserAccessLog" />
+          <FunctionImportMapping FunctionImportName="SelectUserAccessLogByUserID" FunctionName="TouristTicket.Store.SelectUserAccessLogByUserID" />
+          <FunctionImportMapping FunctionImportName="InsertUserInRole" FunctionName="TouristTicket.Store.InsertUserInRole" />
+          <FunctionImportMapping FunctionImportName="UpdateUser" FunctionName="TouristTicket.Store.UpdateUser" />
+          <FunctionImportMapping FunctionImportName="UpdateUserInRole" FunctionName="TouristTicket.Store.UpdateUserInRole" />
+          <FunctionImportMapping FunctionImportName="InsertNewUser" FunctionName="TouristTicket.Store.InsertNewUser" />
+          <EntitySetMapping Name="ExceptionLogs">
+            <EntityTypeMapping TypeName="TouristTicket.ExceptionLog">
+              <MappingFragment StoreEntitySet="vwExceptionLog">
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="StackTrace" ColumnName="StackTrace" />
+                <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="InsertExceptionLog" FunctionName="TouristTicket.Store.InsertExceptionLog" />
+          <EntitySetMapping Name="TransactionLogs">
+            <EntityTypeMapping TypeName="TouristTicket.TransactionLog">
+              <MappingFragment StoreEntitySet="vwTransactionLog">
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+                <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="InsertTransactionLog" FunctionName="TouristTicket.Store.InsertTransactionLog" />
+          <EntitySetMapping Name="TicketInZones">
+            <EntityTypeMapping TypeName="TouristTicket.TicketInZone">
+              <MappingFragment StoreEntitySet="vwTicketInZone">
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+                <ScalarProperty Name="TicketID" ColumnName="TicketID" />
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TicketUsages">
+            <EntityTypeMapping TypeName="TouristTicket.TicketUsage">
+              <MappingFragment StoreEntitySet="vwTicketUsage">
+                <ScalarProperty Name="DateUsed" ColumnName="DateUsed" />
+                <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+                <ScalarProperty Name="TicketID" ColumnName="TicketID" />
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="InsertNewTicket" FunctionName="TouristTicket.Store.InsertNewTicket" />
+          <FunctionImportMapping FunctionImportName="InsertTicketUsage" FunctionName="TouristTicket.Store.InsertTicketUsage" />
+          <FunctionImportMapping FunctionImportName="InsertZone" FunctionName="TouristTicket.Store.InsertZone" />
+          <FunctionImportMapping FunctionImportName="SelectTicketInZone" FunctionName="TouristTicket.Store.SelectTicketInZone" />
+          <FunctionImportMapping FunctionImportName="SelectTicketUsage" FunctionName="TouristTicket.Store.SelectTicketUsage" />
+          <EntitySetMapping Name="Zones">
+            <EntityTypeMapping TypeName="TouristTicket.Zone">
+              <MappingFragment StoreEntitySet="vwZone">
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="InCharge" ColumnName="InCharge" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="ZoneName" ColumnName="ZoneName" />
+                <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ZoneGroups">
+            <EntityTypeMapping TypeName="TouristTicket.ZoneGroup">
+              <MappingFragment StoreEntitySet="vwZoneGroup">
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="EntriesAllowed" ColumnName="EntriesAllowed" />
+                <ScalarProperty Name="DaysAllowed" ColumnName="DaysAllowed" />
+                <ScalarProperty Name="ZoneGroupName" ColumnName="ZoneGroupName" />
+                <ScalarProperty Name="ZoneGroupID" ColumnName="ZoneGroupID" />
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SelectZone" FunctionName="TouristTicket.Store.SelectZone" />
+          <FunctionImportMapping FunctionImportName="DeleteZone" FunctionName="TouristTicket.Store.DeleteZone" />
+          <FunctionImportMapping FunctionImportName="UpdateZone" FunctionName="TouristTicket.Store.UpdateZone" />
+          <FunctionImportMapping FunctionImportName="UpdateZoneGroup" FunctionName="TouristTicket.Store.UpdateZoneGroup" />
+          <FunctionImportMapping FunctionImportName="DeleteZoneGroup" FunctionName="TouristTicket.Store.DeleteZoneGroup" />
+          <FunctionImportMapping FunctionImportName="SelectTicketSetting" FunctionName="TouristTicket.Store.SelectTicketSetting" />
+          <FunctionImportMapping FunctionImportName="InsertZoneGroup" FunctionName="TouristTicket.Store.InsertZoneGroup" />
+          <FunctionImportMapping FunctionImportName="SelectZoneGroup" FunctionName="TouristTicket.Store.SelectZoneGroup" />
+          <EntitySetMapping Name="ZoneAndZoneGroups">
+            <EntityTypeMapping TypeName="TouristTicket.ZoneAndZoneGroup">
+              <MappingFragment StoreEntitySet="vwZoneAndZoneGroup">
+                <ScalarProperty Name="InCharge" ColumnName="InCharge" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="LinkID" ColumnName="LinkID" />
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+                <ScalarProperty Name="ZoneGroupName" ColumnName="ZoneGroupName" />
+                <ScalarProperty Name="ZoneGroupID" ColumnName="ZoneGroupID" />
+                <ScalarProperty Name="ZoneName" ColumnName="ZoneName" />
+                <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SelectZoneAndZoneGroup" FunctionName="TouristTicket.Store.SelectZoneAndZoneGroup" />
+          <FunctionImportMapping FunctionImportName="SelectTicket" FunctionName="TouristTicket.Store.SelectTicket" />
+          <FunctionImportMapping FunctionImportName="DeleteTicketSettings" FunctionName="TouristTicket.Store.DeleteTicketSettings" />
+          <FunctionImportMapping FunctionImportName="DeleteUserByUserID" FunctionName="TouristTicket.Store.DeleteUser" />
+          <FunctionImportMapping FunctionImportName="SelectUserInRole" FunctionName="TouristTicket.Store.SelectUserInRole" />
+          <FunctionImportMapping FunctionImportName="DeleteUserInRole" FunctionName="TouristTicket.Store.DeleteUserInRole" />
+          <FunctionImportMapping FunctionImportName="InsertZoneAndZoneGroup" FunctionName="TouristTicket.Store.InsertZoneAndZoneGroup" />
+          <EntitySetMapping Name="Counters">
+            <EntityTypeMapping TypeName="TouristTicket.Counter">
+              <MappingFragment StoreEntitySet="vwCounter">
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+                <ScalarProperty Name="CounterID" ColumnName="CounterID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tickets">
+            <EntityTypeMapping TypeName="TouristTicket.Ticket">
+              <MappingFragment StoreEntitySet="vwTicket">
+                <ScalarProperty Name="AllowedDays" ColumnName="AllowedDays" />
+                <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+                <ScalarProperty Name="ActivatedBy" ColumnName="ActivatedBy" />
+                <ScalarProperty Name="ActivatedDate" ColumnName="ActivatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="IsActivated" ColumnName="IsActivated" />
+                <ScalarProperty Name="TicketData" ColumnName="TicketData" />
+                <ScalarProperty Name="AlreadyUsed" ColumnName="AlreadyUsed" />
+                <ScalarProperty Name="AllowedUsage" ColumnName="AllowedUsage" />
+                <ScalarProperty Name="TicketStatus" ColumnName="TicketStatus" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TicketSettings">
+            <EntityTypeMapping TypeName="TouristTicket.TicketSetting">
+              <MappingFragment StoreEntitySet="vwTicketSettings">
+                <ScalarProperty Name="ZoneGroupID" ColumnName="ZoneGroupID" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="EntryAllowed" ColumnName="EntryAllowed" />
+                <ScalarProperty Name="DaysAllowed" ColumnName="DaysAllowed" />
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="InsertTicketInZone" FunctionName="TouristTicket.Store.InsertTicketInZone" />
+          <FunctionImportMapping FunctionImportName="UpdateTicketStatus" FunctionName="TouristTicket.Store.UpdateTicketStatus" />
+          <EntitySetMapping Name="TicketDetails">
+            <EntityTypeMapping TypeName="TouristTicket.TicketDetail">
+              <MappingFragment StoreEntitySet="vwTicketDetails">
+                <ScalarProperty Name="AllowedDays" ColumnName="AllowedDays" />
+                <ScalarProperty Name="AllowedUsage" ColumnName="AllowedUsage" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ZoneGroupName" ColumnName="ZoneGroupName" />
+                <ScalarProperty Name="TicketStatus" ColumnName="TicketStatus" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SelectTicketDetails" FunctionName="TouristTicket.Store.SelectTicketDetails" />
+          <FunctionImportMapping FunctionImportName="SelectNewTicketID" FunctionName="TouristTicket.Store.SelectNewTicketID" />
+          <FunctionImportMapping FunctionImportName="UpdateTicket" FunctionName="TouristTicket.Store.UpdateTicket" />
+          <EntitySetMapping Name="TicketUnuseds">
+            <EntityTypeMapping TypeName="TouristTicket.TicketUnused">
+              <MappingFragment StoreEntitySet="vwTicketUnused">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+                <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="InsertTicketUnused" FunctionName="TouristTicket.Store.InsertTicketUnused" />
+          <FunctionImportMapping FunctionImportName="SelectTicketUnused" FunctionName="TouristTicket.Store.SelectTicketUnused" />
+          <FunctionImportMapping FunctionImportName="UpdateTicketUnused" FunctionName="TouristTicket.Store.UpdateTicketUnused" />
+          <EntitySetMapping Name="TicketActivationLogs">
+            <EntityTypeMapping TypeName="TouristTicket.TicketActivationLog">
+              <MappingFragment StoreEntitySet="vwTicketActivationLog">
+                <ScalarProperty Name="ActivatedDate" ColumnName="ActivatedDate" />
+                <ScalarProperty Name="TicketID" ColumnName="TicketID" />
+                <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+                <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+                <ScalarProperty Name="CounterID" ColumnName="CounterID" />
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TicketUsageLogs">
+            <EntityTypeMapping TypeName="TouristTicket.TicketUsageLog">
+              <MappingFragment StoreEntitySet="vwTicketUsageLog">
+                <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+                <ScalarProperty Name="DateUsed" ColumnName="DateUsed" />
+                <ScalarProperty Name="UsageCountAfter" ColumnName="UsageCountAfter" />
+                <ScalarProperty Name="UsageCountBefore" ColumnName="UsageCountBefore" />
+                <ScalarProperty Name="CounterID" ColumnName="CounterID" />
+                <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+                <ScalarProperty Name="TicketID" ColumnName="TicketID" />
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="InsertTicketActivationLog" FunctionName="TouristTicket.Store.InsertTicketActivationLog" />
+          <FunctionImportMapping FunctionImportName="InsertTicketUsageLog" FunctionName="TouristTicket.Store.InsertTicketUsageLog" />
+          <FunctionImportMapping FunctionImportName="RetrieveTicketActivationLog" FunctionName="TouristTicket.Store.RetrieveTicketActivationLog" />
+          <FunctionImportMapping FunctionImportName="RetrieveTicketUsageLog" FunctionName="TouristTicket.Store.RetrieveTicketUsageLog" />
+          <FunctionImportMapping FunctionImportName="DownloadData" FunctionName="TouristTicket.Store.DownloadData" />
+          <FunctionImportMapping FunctionImportName="InsertCounter" FunctionName="TouristTicket.Store.InsertCounter" />
+          <FunctionImportMapping FunctionImportName="DeleteCounter" FunctionName="TouristTicket.Store.DeleteCounter" />
+          <FunctionImportMapping FunctionImportName="SelectCounter" FunctionName="TouristTicket.Store.SelectCounter" />
+          <FunctionImportMapping FunctionImportName="UpdateCounter" FunctionName="TouristTicket.Store.UpdateCounter" />
+          <FunctionImportMapping FunctionImportName="ExportFromServer" FunctionName="TouristTicket.Store.ExportFromServer" />
+          <FunctionImportMapping FunctionImportName="SelectNewCounterID" FunctionName="TouristTicket.Store.SelectNewCounterID" />
+          <EntitySetMapping Name="CounterAndZones">
+            <EntityTypeMapping TypeName="TouristTicket.CounterAndZone">
+              <MappingFragment StoreEntitySet="vwCounterAndZone">
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+                <ScalarProperty Name="CounterID" ColumnName="CounterID" />
+                <ScalarProperty Name="ZoneGroupName" ColumnName="ZoneGroupName" />
+                <ScalarProperty Name="ZoneName" ColumnName="ZoneName" />
+                <ScalarProperty Name="ZoneGroupID" ColumnName="ZoneGroupID" />
+                <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SelectCounterDetail" FunctionName="TouristTicket.Store.SelectCounterDetail" />
+          <FunctionImportMapping FunctionImportName="SelectTicketCollectionsUsingFilters" FunctionName="TouristTicket.Store.SelectTicketCollectionsUsingFilters" />
+          <FunctionImportMapping FunctionImportName="SelectUserCollectionUsingFilters" FunctionName="TouristTicket.Store.SelectUserCollectionUsingFilters" />
+          <EntitySetMapping Name="UserAccessLogs">
+            <EntityTypeMapping TypeName="TouristTicket.UserAccessLog">
+              <MappingFragment StoreEntitySet="vwUserAccessLog">
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="User_PKID" ColumnName="User_PKID" />
+                <ScalarProperty Name="Action" ColumnName="Action" />
+                <ScalarProperty Name="AccessDate" ColumnName="AccessDate" />
+                <ScalarProperty Name="UserPKID" ColumnName="UserPKID" />
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SelectDistinctZoneGroup" FunctionName="TouristTicket.Store.SelectDistinctZoneGroup" />
+          <EntitySetMapping Name="DistinctZoneGroupNames">
+            <EntityTypeMapping TypeName="TouristTicket.DistinctZoneGroupName">
+              <MappingFragment StoreEntitySet="vwDistinctZoneGroupName">
+                <ScalarProperty Name="ZoneGroupName" ColumnName="ZoneGroupName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PrintingApproveds">
+            <EntityTypeMapping TypeName="TouristTicket.PrintingApproved">
+              <MappingFragment StoreEntitySet="vwPrintingApproved">
+                <ScalarProperty Name="ApprovedCode" ColumnName="ApprovedCode" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="InsertPrintingCode" FunctionName="TouristTicket.Store.InsertApprovedCode" />
+          <FunctionImportMapping FunctionImportName="SelectPrintingApproved" FunctionName="TouristTicket.Store.SelectPrintingApproved" />
+          <FunctionImportMapping FunctionImportName="DeletePrintingCode" FunctionName="TouristTicket.Store.DeletePrintingCode" />
+         
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="TouristTicket" ZoomLevel="91" >
+        <EntityTypeShape EntityType="TouristTicket.SampleObject" Width="1.5" PointX="0.5" PointY="0.5" Height="1.4033821614583331" />
+        <EntityTypeShape EntityType="TouristTicket.User" Width="1.5" PointX="2.25" PointY="0.5" Height="1.9802864583333331" />
+        <EntityTypeShape EntityType="TouristTicket.Role" Width="1.5" PointX="4" PointY="0.5" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="TouristTicket.UserInRole" Width="1.5" PointX="5.875" PointY="0.5" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="TouristTicket.ExceptionLog" Width="1.5" PointX="2.25" PointY="3.75" Height="1.787985026041667" />
+        <EntityTypeShape EntityType="TouristTicket.TransactionLog" Width="1.5" PointX="4.375" PointY="3.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="TouristTicket.TicketInZone" Width="1.5" PointX="0.5" PointY="5.875" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="TouristTicket.TicketUsage" Width="1.5" PointX="6.75" PointY="3.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="TouristTicket.Zone" Width="1.5" PointX="7.5" PointY="0.5" Height="1.5956835937500031" />
+        <EntityTypeShape EntityType="TouristTicket.ZoneGroup" Width="1.5" PointX="9.25" PointY="0.5" Height="1.5956835937500031" />
+        <EntityTypeShape EntityType="TouristTicket.ZoneAndZoneGroup" Width="1.5" PointX="9.375" PointY="3.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="TouristTicket.Counter" Width="1.5" PointX="4.375" PointY="5.75" Height="1.4033821614583388" />
+        <EntityTypeShape EntityType="TouristTicket.Ticket" Width="1.5" PointX="2.25" PointY="5.75" Height="3.9033007812499996" />
+        <EntityTypeShape EntityType="TouristTicket.TicketSetting" Width="1.5" PointX="6.75" PointY="5.75" Height="2.7494921874999996" />
+        <EntityTypeShape EntityType="TouristTicket.TicketDetail" Width="1.5" PointX="4.5" PointY="8" Height="2.5571907552083335" />
+        <EntityTypeShape EntityType="TouristTicket.TicketUnused" Width="1.5" PointX="9.375" PointY="6.75" Height="2.5571907552083388" />
+        <EntityTypeShape EntityType="TouristTicket.TicketActivationLog" Width="1.5" PointX="6.75" PointY="9.75" Height="2.1725878906250031" />
+        <EntityTypeShape EntityType="TouristTicket.TicketUsageLog" Width="1.5" PointX="0.75" PointY="10.75" Height="2.5571907552083388" />
+        <EntityTypeShape EntityType="TouristTicket.CounterAndZone" Width="1.5" PointX="3.375" PointY="10.75" Height="2.5571907552083388" />
+        <EntityTypeShape EntityType="TouristTicket.UserAccessLog" Width="1.5" PointX="10.875" PointY="9.5" Height="2.7494921874999996" />
+        <EntityTypeShape EntityType="TouristTicket.DistinctZoneGroupName" Width="1.5" PointX="11.375" PointY="0.75" Height="1.2110807291666674" />
+        <EntityTypeShape EntityType="TouristTicket.PrintingApproved" Width="1.5" PointX="11.375" PointY="5.75" Height="1.4033821614583246" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

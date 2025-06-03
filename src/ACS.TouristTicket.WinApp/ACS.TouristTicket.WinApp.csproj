@@ -1,0 +1,482 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1EC8F18C-75BE-40D8-9D3D-18940FF0566A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ACS.TouristTicket.WinApp</RootNamespace>
+    <AssemblyName>ACS.TouristTicket.WinApp</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Zen.Barcode.Core, Version=2.1.0.0, Culture=neutral, PublicKeyToken=b5ae55aa76d2d9de, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>External Assembly\Zen.Barcode.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Zen.Barcode.Design, Version=2.0.3.0, Culture=neutral, PublicKeyToken=b5ae55aa76d2d9de, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>External Assembly\Zen.Barcode.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Zen.Barcode.Web, Version=2.0.3.0, Culture=neutral, PublicKeyToken=b5ae55aa76d2d9de, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>External Assembly\Zen.Barcode.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing, Version=1.0.4586.41737, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>External Assembly\zxing.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDataSync.cs" />
+    <Compile Include="Background.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Background.Designer.cs">
+      <DependentUpon>Background.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CheckPrintingCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckPrintingCode.Designer.cs">
+      <DependentUpon>CheckPrintingCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Counter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Counter.Designer.cs">
+      <DependentUpon>Counter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExportData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExportData.Designer.cs">
+      <DependentUpon>ExportData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormFactory.cs" />
+    <Compile Include="ImportData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportData.Designer.cs">
+      <DependentUpon>ImportData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintingCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintingCode.Designer.cs">
+      <DependentUpon>PrintingCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResetPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResetPassword.Designer.cs">
+      <DependentUpon>ResetPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\AdminSyncService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\TicketAdminService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SyncInfo.cs" />
+    <Compile Include="UserList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserList.Designer.cs">
+      <DependentUpon>UserList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MdiNavigator.cs" />
+    <Compile Include="MultipleTicketEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MultipleTicketEntry.Designer.cs">
+      <DependentUpon>MultipleTicketEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyAccount.Designer.cs">
+      <DependentUpon>MyAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Setting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Setting.Designer.cs">
+      <DependentUpon>Setting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SingleTicketEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SingleTicketEntry.Designer.cs">
+      <DependentUpon>SingleTicketEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TicketUnUsed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TicketUnUsed.Designer.cs">
+      <DependentUpon>TicketUnUsed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TicketList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TicketList.Designer.cs">
+      <DependentUpon>TicketList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TicketPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TicketPreview.Designer.cs">
+      <DependentUpon>TicketPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TicketSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TicketSetting.designer.cs">
+      <DependentUpon>TicketSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnusedTicketList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnusedTicketList.Designer.cs">
+      <DependentUpon>UnusedTicketList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User.Designer.cs">
+      <DependentUpon>User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zone.Designer.cs">
+      <DependentUpon>Zone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZoneGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZoneGroup.designer.cs">
+      <DependentUpon>ZoneGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZoneSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZoneSearch.Designer.cs">
+      <DependentUpon>ZoneSearch.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Background.resx">
+      <DependentUpon>Background.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CheckPrintingCode.resx">
+      <DependentUpon>CheckPrintingCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Counter.resx">
+      <DependentUpon>Counter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExportData.resx">
+      <DependentUpon>ExportData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportData.resx">
+      <DependentUpon>ImportData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintingCode.resx">
+      <DependentUpon>PrintingCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResetPassword.resx">
+      <DependentUpon>ResetPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserList.resx">
+      <DependentUpon>UserList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MultipleTicketEntry.resx">
+      <DependentUpon>MultipleTicketEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyAccount.resx">
+      <DependentUpon>MyAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setting.resx">
+      <DependentUpon>Setting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SingleTicketEntry.resx">
+      <DependentUpon>SingleTicketEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TicketUnUsed.resx">
+      <DependentUpon>TicketUnUsed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TicketList.resx">
+      <DependentUpon>TicketList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TicketPreview.resx">
+      <DependentUpon>TicketPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TicketSetting.resx">
+      <DependentUpon>TicketSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnusedTicketList.resx">
+      <DependentUpon>UnusedTicketList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User.resx">
+      <DependentUpon>User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zone.resx">
+      <DependentUpon>Zone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZoneGroup.resx">
+      <DependentUpon>ZoneGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZoneSearch.resx">
+      <DependentUpon>ZoneSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ACS.TouristTicket.Model.ACSDownSyncResponse.datasource" />
+    <None Include="ACS.TouristTicket.Model.ACSSyncData.datasource" />
+    <None Include="ACS.TouristTicket.Model.tbZoneGroup.datasource" />
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Service References\AdminSyncService\SyncService.wsdl" />
+    <None Include="Service References\AdminSyncService\SyncService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AdminSyncService\SyncService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AdminSyncService\SyncService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AdminSyncService\SyncService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TicketAdminService\TicketAdminService.wsdl" />
+    <None Include="Service References\TicketAdminService\TicketAdminService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Sql.Server.Express.10.0">
+      <Visible>False</Visible>
+      <ProductName>SQL Server 2008 Express</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DB\TouristTicket.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\TouristTicket_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>TouristTicket.mdf</DependentUpon>
+    </Content>
+    <Content Include="External Assembly\Zen.Barcode.Core.dll" />
+    <Content Include="External Assembly\Zen.Barcode.Design.dll" />
+    <Content Include="External Assembly\Zen.Barcode.Web.dll" />
+    <Content Include="External Assembly\zxing.dll" />
+    <Content Include="Keys\pri.xml" />
+    <Content Include="Keys\pub.xml" />
+    <None Include="Service References\AdminSyncService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\AdminSyncService\configuration.svcinfo" />
+    <None Include="Service References\AdminSyncService\configuration91.svcinfo" />
+    <None Include="Service References\AdminSyncService\SyncService.disco" />
+    <None Include="Service References\TicketAdminService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\TicketAdminService\configuration.svcinfo" />
+    <None Include="Service References\TicketAdminService\configuration91.svcinfo" />
+    <None Include="Service References\TicketAdminService\TicketAdminService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ACS.Library.Common\ACS.Library.Common.csproj">
+      <Project>{0AE5597B-2E2A-48FE-95EB-60F868A03F8C}</Project>
+      <Name>ACS.Library.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ACS.TouristTicket.Common\ACS.TouristTicket.Common.csproj">
+      <Project>{906DE57B-27D3-4617-A680-3628BEEAF1AD}</Project>
+      <Name>ACS.TouristTicket.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ACS.TouristTicket.Facadea\ACS.TouristTicket.Facade.csproj">
+      <Project>{59B7D3C8-E5B8-4090-8290-D5582578AE90}</Project>
+      <Name>ACS.TouristTicket.Facade</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ACS.TouristTicket.Model\ACS.TouristTicket.Model.csproj">
+      <Project>{A58CFB91-F0BC-4D78-BFE3-F3436E0B2ED6}</Project>
+      <Name>ACS.TouristTicket.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ACS.TouristTicket.ReportLibrary\ACS.TouristTicket.ReportLibrary.csproj">
+      <Project>{92D3BD5C-2887-48C8-8734-39EF913A42B3}</Project>
+      <Name>ACS.TouristTicket.ReportLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ACS.TouristTicket.Service\ACS.TouristTicket.Service.csproj">
+      <Project>{7409BE50-B519-4F2E-8DD8-80CF5D8941E5}</Project>
+      <Name>ACS.TouristTicket.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AdminSyncService\" />
+    <WCFMetadataStorage Include="Service References\TicketAdminService\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

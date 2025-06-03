@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SyncService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:1228/SyncService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:1228/SyncService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:1228/SyncService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ACS.TouristTicket.Model" />
+      <xsd:import schemaLocation="http://localhost:1228/SyncService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISyncService_GetUpSyncData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUpSyncData" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetUpSyncData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUpSyncDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_UpdateLastUpSyncDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLastUpSyncDate" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_UpdateLastUpSyncDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLastUpSyncDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetDownSyncData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDownSyncData" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_GetDownSyncData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDownSyncDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_UpdateLastDownSyncDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLastDownSyncDate" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_UpdateLastDownSyncDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLastDownSyncDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SyncData_InputMessage">
+    <wsdl:part name="parameters" element="tns:SyncData" />
+  </wsdl:message>
+  <wsdl:message name="ISyncService_SyncData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SyncDataResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISyncService">
+    <wsdl:operation name="GetUpSyncData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetUpSyncData" message="tns:ISyncService_GetUpSyncData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetUpSyncDataResponse" message="tns:ISyncService_GetUpSyncData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLastUpSyncDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/UpdateLastUpSyncDate" message="tns:ISyncService_UpdateLastUpSyncDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/UpdateLastUpSyncDateResponse" message="tns:ISyncService_UpdateLastUpSyncDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDownSyncData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/GetDownSyncData" message="tns:ISyncService_GetDownSyncData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/GetDownSyncDataResponse" message="tns:ISyncService_GetDownSyncData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLastDownSyncDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/UpdateLastDownSyncDate" message="tns:ISyncService_UpdateLastDownSyncDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/UpdateLastDownSyncDateResponse" message="tns:ISyncService_UpdateLastDownSyncDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SyncData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncService/SyncData" message="tns:ISyncService_SyncData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncService/SyncDataResponse" message="tns:ISyncService_SyncData_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISyncService" type="tns:ISyncService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUpSyncData">
+      <soap:operation soapAction="http://tempuri.org/ISyncService/GetUpSyncData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLastUpSyncDate">
+      <soap:operation soapAction="http://tempuri.org/ISyncService/UpdateLastUpSyncDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDownSyncData">
+      <soap:operation soapAction="http://tempuri.org/ISyncService/GetDownSyncData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLastDownSyncDate">
+      <soap:operation soapAction="http://tempuri.org/ISyncService/UpdateLastDownSyncDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncData">
+      <soap:operation soapAction="http://tempuri.org/ISyncService/SyncData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SyncService">
+    <wsdl:port name="BasicHttpBinding_ISyncService" binding="tns:BasicHttpBinding_ISyncService">
+      <soap:address location="http://localhost:1228/SyncService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d2eae4dd-c075-49cf-bd28-1de79f3323b9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1228/SyncService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SyncService3.xsd" MetadataType="Schema" ID="4b0101c8-91c1-496b-8ef2-890cf97d808a" SourceId="1" SourceUrl="http://localhost:1228/SyncService.svc?xsd=xsd3" />
+    <MetadataFile FileName="SyncService2.xsd" MetadataType="Schema" ID="42b04b63-c2a4-4e78-87a8-46f8fba78fd1" SourceId="1" SourceUrl="http://localhost:1228/SyncService.svc?xsd=xsd2" />
+    <MetadataFile FileName="SyncService.xsd" MetadataType="Schema" ID="3ebda5b2-030d-4cb2-ba50-075f402d405b" SourceId="1" SourceUrl="http://localhost:1228/SyncService.svc?xsd=xsd1" />
+    <MetadataFile FileName="SyncService1.xsd" MetadataType="Schema" ID="c019b2c9-2da2-4cab-b7b5-b39db25de0cf" SourceId="1" SourceUrl="http://localhost:1228/SyncService.svc?xsd=xsd0" />
+    <MetadataFile FileName="SyncService.disco" MetadataType="Disco" ID="51465d7a-156c-4e2d-9e32-3f01bacfdfae" SourceId="1" SourceUrl="http://localhost:1228/SyncService.svc?disco" />
+    <MetadataFile FileName="SyncService.wsdl" MetadataType="Wsdl" ID="ac55cebc-8b35-423a-a064-0c2402d03df3" SourceId="1" SourceUrl="http://localhost:1228/SyncService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

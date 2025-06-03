@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{59B7D3C8-E5B8-4090-8290-D5582578AE90}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ACS.TouristTicket.Facade</RootNamespace>
+    <AssemblyName>ACS.TouristTicket.Facade</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ACSFCCounter.cs" />
+    <Compile Include="ACSFCDownSync.cs" />
+    <Compile Include="ACSFCExceptionLog.cs" />
+    <Compile Include="ACSFCLogEncryptDecrypt.cs" />
+    <Compile Include="ACSFCSupport.cs" />
+    <Compile Include="ACSFCSync.cs" />
+    <Compile Include="ACSFCTicket.cs" />
+    <Compile Include="ACSFCTicketUnused.cs" />
+    <Compile Include="ACSFCTicketInZone.cs" />
+    <Compile Include="ACSFCTicketSettings.cs" />
+    <Compile Include="ACSFCTicketUsage.cs" />
+    <Compile Include="ACSFCTransactionLog.cs" />
+    <Compile Include="ACSFCUpSync.cs" />
+    <Compile Include="ACSFCUser.cs" />
+    <Compile Include="ACSFCZone.cs" />
+    <Compile Include="ACSFCZoneGroup.cs" />
+    <Compile Include="ACSFDataSync.cs" />
+    <Compile Include="ACSFSample.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ACS.Library.Common\ACS.Library.Common.csproj">
+      <Project>{0AE5597B-2E2A-48FE-95EB-60F868A03F8C}</Project>
+      <Name>ACS.Library.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ACS.TouristTicket.BusinessLogic\ACS.TouristTicket.BusinessLogic.csproj">
+      <Project>{ED37D777-5E8A-4E45-B660-350CA33582CB}</Project>
+      <Name>ACS.TouristTicket.BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ACS.TouristTicket.Common\ACS.TouristTicket.Common.csproj">
+      <Project>{906DE57B-27D3-4617-A680-3628BEEAF1AD}</Project>
+      <Name>ACS.TouristTicket.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ACS.TouristTicket.Model\ACS.TouristTicket.Model.csproj">
+      <Project>{A58CFB91-F0BC-4D78-BFE3-F3436E0B2ED6}</Project>
+      <Name>ACS.TouristTicket.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

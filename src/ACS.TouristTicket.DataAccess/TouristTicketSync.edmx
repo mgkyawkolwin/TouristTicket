@@ -1,0 +1,1072 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TouristTicketSyncModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="TouristTicketSyncModelStoreContainer">
+          <EntitySet Name="tbClientUploadDownloadLog" EntityType="TouristTicketSyncModel.Store.tbClientUploadDownloadLog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbCode" EntityType="TouristTicketSyncModel.Store.tbCode" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbCodeCategory" EntityType="TouristTicketSyncModel.Store.tbCodeCategory" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbCounter" EntityType="TouristTicketSyncModel.Store.tbCounter" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbDownloadLog" EntityType="TouristTicketSyncModel.Store.tbDownloadLog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbExceptionLog" EntityType="TouristTicketSyncModel.Store.tbExceptionLog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbRole" EntityType="TouristTicketSyncModel.Store.tbRole" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbSampleTable" EntityType="TouristTicketSyncModel.Store.tbSampleTable" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbSetting" EntityType="TouristTicketSyncModel.Store.tbSetting" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbTicket" EntityType="TouristTicketSyncModel.Store.tbTicket" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbTicketActivationLog" EntityType="TouristTicketSyncModel.Store.tbTicketActivationLog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbTicketInZone" EntityType="TouristTicketSyncModel.Store.tbTicketInZone" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbTicketLog" EntityType="TouristTicketSyncModel.Store.tbTicketLog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbTicketSettings" EntityType="TouristTicketSyncModel.Store.tbTicketSettings" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbTicketUnused" EntityType="TouristTicketSyncModel.Store.tbTicketUnused" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbTicketUsage" EntityType="TouristTicketSyncModel.Store.tbTicketUsage" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbTicketUsageLog" EntityType="TouristTicketSyncModel.Store.tbTicketUsageLog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbTransactionLog" EntityType="TouristTicketSyncModel.Store.tbTransactionLog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbUser" EntityType="TouristTicketSyncModel.Store.tbUser" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbUserAccessLog" EntityType="TouristTicketSyncModel.Store.tbUserAccessLog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbUserInRole" EntityType="TouristTicketSyncModel.Store.tbUserInRole" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbWebUser" EntityType="TouristTicketSyncModel.Store.tbWebUser" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbZone" EntityType="TouristTicketSyncModel.Store.tbZone" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbZoneAndZoneGroup" EntityType="TouristTicketSyncModel.Store.tbZoneAndZoneGroup" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbZoneGroup" EntityType="TouristTicketSyncModel.Store.tbZoneGroup" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="tbClientUploadDownloadLog">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="LastUploadedDateTime" Type="datetime" Nullable="false" />
+          <Property Name="LastDownloadedDateTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbCode">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="int" Nullable="false" />
+          <Property Name="CategoryID" Type="int" Nullable="false" />
+          <Property Name="Code" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbCodeCategory">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="int" Nullable="false" />
+          <Property Name="CodeCategory" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbCounter">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CounterID" Type="int" Nullable="false" />
+          <Property Name="ZoneID" Type="int" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbDownloadLog">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CounterID" Type="int" Nullable="false" />
+          <Property Name="LastDownloadedDateTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbExceptionLog">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ErrorMessage" Type="varchar" Nullable="false" MaxLength="256" />
+          <Property Name="StackTrace" Type="varchar" MaxLength="512" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbRole">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="int" Nullable="false" />
+          <Property Name="RoleName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="RoleDescription" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbSampleTable">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SampleColumn" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbSetting">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SettingName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="SettingDisplayName" Type="varchar" Nullable="false" MaxLength="128" />
+          <Property Name="SettingDescription" Type="varchar" MaxLength="256" />
+          <Property Name="SettingValue" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="ModifiedBy" Type="int" />
+        </EntityType>
+        <EntityType Name="tbTicket">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="int" Nullable="false" StoreGeneratedPattern="None" />
+          <Property Name="Price" Type="decimal" Nullable="false" Precision="9" Scale="2" />
+          <Property Name="TicketStatus" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="AllowedUsage" Type="int" Nullable="false" />
+          <Property Name="AlreadyUsed" Type="int" Nullable="false" />
+          <Property Name="AllowedDays" Type="int" Nullable="false" />
+          <Property Name="TicketData" Type="varchar" MaxLength="256" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="int" Nullable="false" />
+          <Property Name="IsActivated" Type="bit" Nullable="false" />
+          <Property Name="ActivatedDate" Type="datetime" />
+          <Property Name="ActivatedBy" Type="int" />
+          <Property Name="ExpiryDate" Type="datetime" />
+          <Property Name="LastUploadedDate" Type="datetime" />
+          <Property Name="LastDownloadedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbTicketActivationLog">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CounterID" Type="int" Nullable="false" />
+          <Property Name="ZoneID" Type="int" Nullable="false" />
+          <Property Name="TransactionID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TicketID" Type="int" Nullable="false" />
+          <Property Name="ActivatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbTicketInZone">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="int" Nullable="false" StoreGeneratedPattern="None" />
+          <Property Name="TicketID" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ZoneGroupID" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="int" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="LastUploadedDate" Type="datetime" Nullable="true" />
+        </EntityType>
+        <EntityType Name="tbTicketLog">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CounterID" Type="int" Nullable="false" />
+          <Property Name="TransactionID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TicketID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbTicketSettings">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ZoneGroupID" Type="varchar" MaxLength="50" />
+          <Property Name="DaysAllowed" Type="int" />
+          <Property Name="EntryAllowed" Type="int" />
+          <Property Name="Price" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbTicketUnused">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SerialNo" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Reason" Type="nvarchar" MaxLength="500" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="int" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbTicketUsage">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="int" Nullable="false" />
+          <Property Name="TicketID" Type="int" Nullable="false" />
+          <Property Name="ZoneID" Type="int" Nullable="false" />
+          <Property Name="CounterID" Type="int" Nullable="false" />
+          <Property Name="DateUsed" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbTicketUsageLog">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="int" Nullable="false" StoreGeneratedPattern="None" />
+          <Property Name="TicketID" Type="int" Nullable="false" />
+          <Property Name="ZoneID" Type="int" Nullable="false" />
+          <Property Name="CounterID" Type="int" Nullable="false" />
+          <Property Name="UsageCountBefore" Type="int" Nullable="false" />
+          <Property Name="UsageCountAfter" Type="int" Nullable="false" />
+          <Property Name="DateUsed" Type="datetime" Nullable="false" />
+          <Property Name="TransactionID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="LastUploadedDate" Type="datetime" />
+          <Property Name="LastDownloadedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbTransactionLog">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TransactionType" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="TransactionDate" Type="datetime" Nullable="false" />
+          <Property Name="Data" Type="varchar" MaxLength="512" />
+        </EntityType>
+        <EntityType Name="tbUser">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Password" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="DisplayName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Status" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbUserAccessLog">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserPKID" Type="int" Nullable="false" />
+          <Property Name="AccessDate" Type="datetime" Nullable="false" />
+          <Property Name="Action" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbUserInRole">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserPKID" Type="int" Nullable="false" />
+          <Property Name="RoleID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbWebUser">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Password" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="DisplayName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Email" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Status" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="int" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbZone">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="int" Nullable="false" StoreGeneratedPattern="None" />
+          <Property Name="ZoneID" Type="varchar" MaxLength="10" />
+          <Property Name="ZoneName" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="int" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="LastUploadedDate" Type="datetime" />
+          <Property Name="LastDownloadedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbZoneAndZoneGroup">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="int" Nullable="false" StoreGeneratedPattern="None" />
+          <Property Name="ZoneGroupID" Type="int" Nullable="false" />
+          <Property Name="ZoneID" Type="int" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="LastUploadedDate" Type="datetime" />
+          <Property Name="LastDownloadedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbZoneGroup">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="int" Nullable="false" StoreGeneratedPattern="None" />
+          <Property Name="ZoneGroupID" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="ZoneGroupName" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="DaysAllowed" Type="int" Nullable="false" />
+          <Property Name="EntriesAllowed" Type="int" Nullable="false" />
+          <Property Name="Price" Type="decimal" Nullable="false" Precision="9" Scale="2" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="int" Nullable="false" />
+          <Property Name="LastUploadedDate" Type="datetime" />
+          <Property Name="LastDownloadedDate" Type="datetime" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TouristTicketSyncModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="TouristTicketEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbClientUploadDownloadLogs" EntityType="TouristTicketSyncModel.tbClientUploadDownloadLog" />
+          <EntitySet Name="tbCodes" EntityType="TouristTicketSyncModel.tbCode" />
+          <EntitySet Name="tbCodeCategories" EntityType="TouristTicketSyncModel.tbCodeCategory" />
+          <EntitySet Name="tbCounters" EntityType="TouristTicketSyncModel.tbCounter" />
+          <EntitySet Name="tbDownloadLogs" EntityType="TouristTicketSyncModel.tbDownloadLog" />
+          <EntitySet Name="tbExceptionLogs" EntityType="TouristTicketSyncModel.tbExceptionLog" />
+          <EntitySet Name="tbRoles" EntityType="TouristTicketSyncModel.tbRole" />
+          <EntitySet Name="tbSampleTables" EntityType="TouristTicketSyncModel.tbSampleTable" />
+          <EntitySet Name="tbSettings" EntityType="TouristTicketSyncModel.tbSetting" />
+          <EntitySet Name="tbTickets" EntityType="TouristTicketSyncModel.tbTicket" />
+          <EntitySet Name="tbTicketActivationLogs" EntityType="TouristTicketSyncModel.tbTicketActivationLog" />
+          <EntitySet Name="tbTicketInZones" EntityType="TouristTicketSyncModel.tbTicketInZone" />
+          <EntitySet Name="tbTicketLogs" EntityType="TouristTicketSyncModel.tbTicketLog" />
+          <EntitySet Name="tbTicketSettings" EntityType="TouristTicketSyncModel.tbTicketSetting" />
+          <EntitySet Name="tbTicketUnuseds" EntityType="TouristTicketSyncModel.tbTicketUnused" />
+          <EntitySet Name="tbTicketUsages" EntityType="TouristTicketSyncModel.tbTicketUsage" />
+          <EntitySet Name="tbTicketUsageLogs" EntityType="TouristTicketSyncModel.tbTicketUsageLog" />
+          <EntitySet Name="tbTransactionLogs" EntityType="TouristTicketSyncModel.tbTransactionLog" />
+          <EntitySet Name="tbUsers" EntityType="TouristTicketSyncModel.tbUser" />
+          <EntitySet Name="tbUserAccessLogs" EntityType="TouristTicketSyncModel.tbUserAccessLog" />
+          <EntitySet Name="tbUserInRoles" EntityType="TouristTicketSyncModel.tbUserInRole" />
+          <EntitySet Name="tbWebUsers" EntityType="TouristTicketSyncModel.tbWebUser" />
+          <EntitySet Name="tbZoneGroups" EntityType="TouristTicketSyncModel.tbZoneGroup" />
+          <EntitySet Name="tbZones" EntityType="TouristTicketSyncModel.tbZone" />
+          <EntitySet Name="tbZoneAndZoneGroups" EntityType="TouristTicketSyncModel.tbZoneAndZoneGroup" />
+        </EntityContainer>
+        <EntityType Name="tbClientUploadDownloadLog">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LastUploadedDateTime" Type="DateTime" Nullable="false" />
+          <Property Name="LastDownloadedDateTime" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbCode">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="Int32" Nullable="false" />
+          <Property Name="CategoryID" Type="Int32" Nullable="false" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbCodeCategory">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="Int32" Nullable="false" />
+          <Property Name="CodeCategory" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbCounter">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CounterID" Type="Int32" Nullable="false" />
+          <Property Name="ZoneID" Type="Int32" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbDownloadLog">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CounterID" Type="Int32" Nullable="false" />
+          <Property Name="LastDownloadedDateTime" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbExceptionLog">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ErrorMessage" Type="String" Nullable="false" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="StackTrace" Type="String" MaxLength="512" Unicode="false" FixedLength="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbRole">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="Int32" Nullable="false" />
+          <Property Name="RoleName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="RoleDescription" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbSampleTable">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SampleColumn" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CreatedDate" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="tbSetting">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SettingName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="SettingDisplayName" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+          <Property Name="SettingDescription" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="SettingValue" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedDate" Type="DateTime" />
+          <Property Name="ModifiedBy" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tbTicket">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="Price" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+          <Property Name="TicketStatus" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="AllowedUsage" Type="Int32" Nullable="false" />
+          <Property Name="AlreadyUsed" Type="Int32" Nullable="false" />
+          <Property Name="AllowedDays" Type="Int32" Nullable="false" />
+          <Property Name="TicketData" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="Int32" Nullable="false" />
+          <Property Name="IsActivated" Type="Boolean" Nullable="false" />
+          <Property Name="ActivatedDate" Type="DateTime" />
+          <Property Name="ActivatedBy" Type="Int32" />
+          <Property Name="ExpiryDate" Type="DateTime" />
+          <Property Type="DateTime" Name="LastUploadedDate" />
+          <Property Type="DateTime" Name="LastDownloadedDate" />
+        </EntityType>
+        <EntityType Name="tbTicketActivationLog">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CounterID" Type="Int32" Nullable="false" />
+          <Property Name="ZoneID" Type="Int32" Nullable="false" />
+          <Property Name="TransactionID" Type="Guid" Nullable="false" />
+          <Property Name="TicketID" Type="Int32" Nullable="false" />
+          <Property Name="ActivatedDate" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbTicketInZone">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="TicketID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ZoneGroupID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" />
+          <Property Type="DateTime" Name="LastUploadedDate" Nullable="true" />
+        </EntityType>
+        <EntityType Name="tbTicketLog">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CounterID" Type="Int32" Nullable="false" />
+          <Property Name="TransactionID" Type="Guid" Nullable="false" />
+          <Property Name="TicketID" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbTicketSetting">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ZoneGroupID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DaysAllowed" Type="Int32" />
+          <Property Name="EntryAllowed" Type="Int32" />
+          <Property Name="Price" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="tbTicketUnused">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SerialNo" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Reason" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbTicketUsage">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="Int32" Nullable="false" />
+          <Property Name="TicketID" Type="Int32" Nullable="false" />
+          <Property Name="ZoneID" Type="Int32" Nullable="false" />
+          <Property Name="CounterID" Type="Int32" Nullable="false" />
+          <Property Name="DateUsed" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbTicketUsageLog">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="TicketID" Type="Int32" Nullable="false" />
+          <Property Name="ZoneID" Type="Int32" Nullable="false" />
+          <Property Name="CounterID" Type="Int32" Nullable="false" />
+          <Property Name="UsageCountBefore" Type="Int32" Nullable="false" />
+          <Property Name="UsageCountAfter" Type="Int32" Nullable="false" />
+          <Property Name="DateUsed" Type="DateTime" Nullable="false" />
+          <Property Name="TransactionID" Type="Guid" Nullable="false" />
+          <Property Type="DateTime" Name="LastUploadedDate" />
+          <Property Type="DateTime" Name="LastDownloadedDate" />
+        </EntityType>
+        <EntityType Name="tbTransactionLog">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TransactionType" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="TransactionDate" Type="DateTime" Nullable="false" />
+          <Property Name="Data" Type="String" MaxLength="512" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tbUser">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DisplayName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbUserAccessLog">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserPKID" Type="Int32" Nullable="false" />
+          <Property Name="AccessDate" Type="DateTime" Nullable="false" />
+          <Property Name="Action" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbUserInRole">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserPKID" Type="Int32" Nullable="false" />
+          <Property Name="RoleID" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbWebUser">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DisplayName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Status" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbZoneGroup">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Name="PKID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="ZoneGroupID" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="ZoneGroupName" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="DaysAllowed" Type="Int32" Nullable="false" />
+          <Property Name="EntriesAllowed" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="Int32" Nullable="false" />
+          <Property Name="LastUploadedDate" Type="DateTime" />
+          <Property Name="LastDownloadedDate" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="tbZone">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Type="Int32" Name="PKID" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Type="String" Name="ZoneID" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ZoneName" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+          <Property Type="Int32" Name="ModifiedBy" Nullable="false" />
+          <Property Type="DateTime" Name="ModifiedDate" Nullable="false" />
+          <Property Type="DateTime" Name="LastUploadedDate" />
+          <Property Type="DateTime" Name="LastDownloadedDate" />
+        </EntityType>
+        <EntityType Name="tbZoneAndZoneGroup">
+          <Key>
+            <PropertyRef Name="PKID" />
+          </Key>
+          <Property Type="Int32" Name="PKID" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Type="Int32" Name="ZoneGroupID" Nullable="false" />
+          <Property Type="Int32" Name="ZoneID" Nullable="false" />
+          <Property Type="Int32" Name="CreatedBy" />
+          <Property Type="DateTime" Name="CreatedDate" />
+          <Property Type="Int32" Name="ModifiedBy" />
+          <Property Type="DateTime" Name="ModifiedDate" />
+          <Property Type="DateTime" Name="LastUploadedDate" />
+          <Property Type="DateTime" Name="LastDownloadedDate" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TouristTicketSyncModelStoreContainer" CdmEntityContainer="TouristTicketEntities">
+          <EntitySetMapping Name="tbClientUploadDownloadLogs">
+            <EntityTypeMapping TypeName="TouristTicketSyncModel.tbClientUploadDownloadLog">
+              <MappingFragment StoreEntitySet="tbClientUploadDownloadLog">
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+                <ScalarProperty Name="LastUploadedDateTime" ColumnName="LastUploadedDateTime" />
+                <ScalarProperty Name="LastDownloadedDateTime" ColumnName="LastDownloadedDateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbCodes">
+            <EntityTypeMapping TypeName="TouristTicketSyncModel.tbCode">
+              <MappingFragment StoreEntitySet="tbCode">
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbCodeCategories">
+            <EntityTypeMapping TypeName="TouristTicketSyncModel.tbCodeCategory">
+              <MappingFragment StoreEntitySet="tbCodeCategory">
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+                <ScalarProperty Name="CodeCategory" ColumnName="CodeCategory" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbCounters">
+            <EntityTypeMapping TypeName="TouristTicketSyncModel.tbCounter">
+              <MappingFragment StoreEntitySet="tbCounter">
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+                <ScalarProperty Name="CounterID" ColumnName="CounterID" />
+                <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbDownloadLogs">
+            <EntityTypeMapping TypeName="TouristTicketSyncModel.tbDownloadLog">
+              <MappingFragment StoreEntitySet="tbDownloadLog">
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+                <ScalarProperty Name="CounterID" ColumnName="CounterID" />
+                <ScalarProperty Name="LastDownloadedDateTime" ColumnName="LastDownloadedDateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbExceptionLogs">
+            <EntityTypeMapping TypeName="TouristTicketSyncModel.tbExceptionLog">
+              <MappingFragment StoreEntitySet="tbExceptionLog">
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+                <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+                <ScalarProperty Name="StackTrace" ColumnName="StackTrace" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbRoles">
+            <EntityTypeMapping TypeName="TouristTicketSyncModel.tbRole">
+              <MappingFragment StoreEntitySet="tbRole">
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="RoleDescription" ColumnName="RoleDescription" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbSampleTables">
+            <EntityTypeMapping TypeName="TouristTicketSyncModel.tbSampleTable">
+              <MappingFragment StoreEntitySet="tbSampleTable">
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+                <ScalarProperty Name="SampleColumn" ColumnName="SampleColumn" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbSettings">
+            <EntityTypeMapping TypeName="TouristTicketSyncModel.tbSetting">
+              <MappingFragment StoreEntitySet="tbSetting">
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+                <ScalarProperty Name="SettingName" ColumnName="SettingName" />
+                <ScalarProperty Name="SettingDisplayName" ColumnName="SettingDisplayName" />
+                <ScalarProperty Name="SettingDescription" ColumnName="SettingDescription" />
+                <ScalarProperty Name="SettingValue" ColumnName="SettingValue" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbTickets">
+            <EntityTypeMapping TypeName="TouristTicketSyncModel.tbTicket">
+              <MappingFragment StoreEntitySet="tbTicket">
+                <ScalarProperty Name="LastDownloadedDate" ColumnName="LastDownloadedDate" />
+                <ScalarProperty Name="LastUploadedDate" ColumnName="LastUploadedDate" />
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="TicketStatus" ColumnName="TicketStatus" />
+                <ScalarProperty Name="AllowedUsage" ColumnName="AllowedUsage" />
+                <ScalarProperty Name="AlreadyUsed" ColumnName="AlreadyUsed" />
+                <ScalarProperty Name="AllowedDays" ColumnName="AllowedDays" />
+                <ScalarProperty Name="TicketData" ColumnName="TicketData" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="IsActivated" ColumnName="IsActivated" />
+                <ScalarProperty Name="ActivatedDate" ColumnName="ActivatedDate" />
+                <ScalarProperty Name="ActivatedBy" ColumnName="ActivatedBy" />
+                <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbTicketActivationLogs">
+            <EntityTypeMapping TypeName="TouristTicketSyncModel.tbTicketActivationLog">
+              <MappingFragment StoreEntitySet="tbTicketActivationLog">
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+                <ScalarProperty Name="CounterID" ColumnName="CounterID" />
+                <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+                <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+                <ScalarProperty Name="TicketID" ColumnName="TicketID" />
+                <ScalarProperty Name="ActivatedDate" ColumnName="ActivatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbTicketInZones">
+            <EntityTypeMapping TypeName="TouristTicketSyncModel.tbTicketInZone">
+              <MappingFragment StoreEntitySet="tbTicketInZone">
+                <ScalarProperty Name="LastUploadedDate" ColumnName="LastUploadedDate" />
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+                <ScalarProperty Name="TicketID" ColumnName="TicketID" />
+                <ScalarProperty Name="ZoneGroupID" ColumnName="ZoneGroupID" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbTicketLogs">
+            <EntityTypeMapping TypeName="TouristTicketSyncModel.tbTicketLog">
+              <MappingFragment StoreEntitySet="tbTicketLog">
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+                <ScalarProperty Name="CounterID" ColumnName="CounterID" />
+                <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+                <ScalarProperty Name="TicketID" ColumnName="TicketID" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbTicketSettings">
+            <EntityTypeMapping TypeName="TouristTicketSyncModel.tbTicketSetting">
+              <MappingFragment StoreEntitySet="tbTicketSettings">
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+                <ScalarProperty Name="ZoneGroupID" ColumnName="ZoneGroupID" />
+                <ScalarProperty Name="DaysAllowed" ColumnName="DaysAllowed" />
+                <ScalarProperty Name="EntryAllowed" ColumnName="EntryAllowed" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbTicketUnuseds">
+            <EntityTypeMapping TypeName="TouristTicketSyncModel.tbTicketUnused">
+              <MappingFragment StoreEntitySet="tbTicketUnused">
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+                <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbTicketUsages">
+            <EntityTypeMapping TypeName="TouristTicketSyncModel.tbTicketUsage">
+              <MappingFragment StoreEntitySet="tbTicketUsage">
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+                <ScalarProperty Name="TicketID" ColumnName="TicketID" />
+                <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+                <ScalarProperty Name="CounterID" ColumnName="CounterID" />
+                <ScalarProperty Name="DateUsed" ColumnName="DateUsed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbTicketUsageLogs">
+            <EntityTypeMapping TypeName="TouristTicketSyncModel.tbTicketUsageLog">
+              <MappingFragment StoreEntitySet="tbTicketUsageLog">
+                <ScalarProperty Name="LastDownloadedDate" ColumnName="LastDownloadedDate" />
+                <ScalarProperty Name="LastUploadedDate" ColumnName="LastUploadedDate" />
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+                <ScalarProperty Name="TicketID" ColumnName="TicketID" />
+                <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+                <ScalarProperty Name="CounterID" ColumnName="CounterID" />
+                <ScalarProperty Name="UsageCountBefore" ColumnName="UsageCountBefore" />
+                <ScalarProperty Name="UsageCountAfter" ColumnName="UsageCountAfter" />
+                <ScalarProperty Name="DateUsed" ColumnName="DateUsed" />
+                <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbTransactionLogs">
+            <EntityTypeMapping TypeName="TouristTicketSyncModel.tbTransactionLog">
+              <MappingFragment StoreEntitySet="tbTransactionLog">
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+                <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbUsers">
+            <EntityTypeMapping TypeName="TouristTicketSyncModel.tbUser">
+              <MappingFragment StoreEntitySet="tbUser">
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbUserAccessLogs">
+            <EntityTypeMapping TypeName="TouristTicketSyncModel.tbUserAccessLog">
+              <MappingFragment StoreEntitySet="tbUserAccessLog">
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+                <ScalarProperty Name="UserPKID" ColumnName="UserPKID" />
+                <ScalarProperty Name="AccessDate" ColumnName="AccessDate" />
+                <ScalarProperty Name="Action" ColumnName="Action" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbUserInRoles">
+            <EntityTypeMapping TypeName="TouristTicketSyncModel.tbUserInRole">
+              <MappingFragment StoreEntitySet="tbUserInRole">
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+                <ScalarProperty Name="UserPKID" ColumnName="UserPKID" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbWebUsers">
+            <EntityTypeMapping TypeName="TouristTicketSyncModel.tbWebUser">
+              <MappingFragment StoreEntitySet="tbWebUser">
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbZoneGroups">
+            <EntityTypeMapping TypeName="TouristTicketSyncModel.tbZoneGroup">
+              <MappingFragment StoreEntitySet="tbZoneGroup">
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+                <ScalarProperty Name="ZoneGroupID" ColumnName="ZoneGroupID" />
+                <ScalarProperty Name="ZoneGroupName" ColumnName="ZoneGroupName" />
+                <ScalarProperty Name="DaysAllowed" ColumnName="DaysAllowed" />
+                <ScalarProperty Name="EntriesAllowed" ColumnName="EntriesAllowed" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="LastUploadedDate" ColumnName="LastUploadedDate" />
+                <ScalarProperty Name="LastDownloadedDate" ColumnName="LastDownloadedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbZones">
+            <EntityTypeMapping TypeName="TouristTicketSyncModel.tbZone">
+              <MappingFragment StoreEntitySet="tbZone">
+                <ScalarProperty Name="LastDownloadedDate" ColumnName="LastDownloadedDate" />
+                <ScalarProperty Name="LastUploadedDate" ColumnName="LastUploadedDate" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ZoneName" ColumnName="ZoneName" />
+                <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbZoneAndZoneGroups">
+            <EntityTypeMapping TypeName="TouristTicketSyncModel.tbZoneAndZoneGroup">
+              <MappingFragment StoreEntitySet="tbZoneAndZoneGroup">
+                <ScalarProperty Name="LastDownloadedDate" ColumnName="LastDownloadedDate" />
+                <ScalarProperty Name="LastUploadedDate" ColumnName="LastUploadedDate" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+                <ScalarProperty Name="ZoneGroupID" ColumnName="ZoneGroupID" />
+                <ScalarProperty Name="PKID" ColumnName="PKID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="TouristTicketSync">
+        <EntityTypeShape EntityType="TouristTicketSyncModel.tbClientUploadDownloadLog" Width="1.5" PointX="0.75" PointY="0.75" Height="1.7226977241039272" IsExpanded="true" />
+        <EntityTypeShape EntityType="TouristTicketSyncModel.tbCode" Width="1.5" PointX="2.75" PointY="0.75" Height="2.7900499941905341" IsExpanded="true" />
+        <EntityTypeShape EntityType="TouristTicketSyncModel.tbCodeCategory" Width="1.5" PointX="4.75" PointY="0.75" Height="2.363109086155891" IsExpanded="true" />
+        <EntityTypeShape EntityType="TouristTicketSyncModel.tbCounter" Width="1.5" PointX="0.75" PointY="4.75" Height="2.1496386321385703" IsExpanded="true" />
+        <EntityTypeShape EntityType="TouristTicketSyncModel.tbDownloadLog" Width="1.5" PointX="2.75" PointY="4.75" Height="1.7226977241039272" IsExpanded="true" />
+        <EntityTypeShape EntityType="TouristTicketSyncModel.tbExceptionLog" Width="1.5" PointX="4.75" PointY="4.75" Height="1.9361681781212496" IsExpanded="true" />
+        <EntityTypeShape EntityType="TouristTicketSyncModel.tbRole" Width="1.5" PointX="6.75" PointY="0.75" Height="2.5765795401732134" IsExpanded="true" />
+        <EntityTypeShape EntityType="TouristTicketSyncModel.tbSampleTable" Width="1.5" PointX="6.75" PointY="4.75" Height="1.7226977241039272" IsExpanded="true" />
+        <EntityTypeShape EntityType="TouristTicketSyncModel.tbSetting" Width="1.5" PointX="0.75" PointY="7.75" Height="3.0035204482078584" IsExpanded="true" />
+        <EntityTypeShape EntityType="TouristTicketSyncModel.tbTicket" Width="1.5" PointX="2.75" PointY="7.75" Height="4.7112840803464238" IsExpanded="true" />
+        <EntityTypeShape EntityType="TouristTicketSyncModel.tbTicketActivationLog" Width="1.5" PointX="4.75" PointY="7.75" Height="2.3631090861558945" IsExpanded="true" />
+        <EntityTypeShape EntityType="TouristTicketSyncModel.tbTicketInZone" Width="1.5" PointX="6" PointY="7.25" Height="2.7900499941905341" IsExpanded="true" />
+        <EntityTypeShape EntityType="TouristTicketSyncModel.tbTicketLog" Width="1.5" PointX="8.75" PointY="0.75" Height="2.1496386321385756" IsExpanded="true" />
+        <EntityTypeShape EntityType="TouristTicketSyncModel.tbTicketSetting" Width="1.5" PointX="8.75" PointY="3.75" Height="3.0035204482078584" IsExpanded="true" />
+        <EntityTypeShape EntityType="TouristTicketSyncModel.tbTicketUnused" Width="1.5" PointX="8.75" PointY="7.75" Height="2.5765795401732134" IsExpanded="true" />
+        <EntityTypeShape EntityType="TouristTicketSyncModel.tbTicketUsage" Width="1.5" PointX="10.75" PointY="0.75" Height="2.1496386321385756" IsExpanded="true" />
+        <EntityTypeShape EntityType="TouristTicketSyncModel.tbTicketUsageLog" Width="1.5" PointX="10.75" PointY="3.75" Height="3.2169909022251773" IsExpanded="true" />
+        <EntityTypeShape EntityType="TouristTicketSyncModel.tbTransactionLog" Width="1.5" PointX="10.75" PointY="7.75" Height="1.9361681781212496" IsExpanded="true" />
+        <EntityTypeShape EntityType="TouristTicketSyncModel.tbUser" Width="1.5" PointX="10.75" PointY="10.75" Height="3.0035204482078584" IsExpanded="true" />
+        <EntityTypeShape EntityType="TouristTicketSyncModel.tbUserAccessLog" Width="1.5" PointX="4.75" PointY="11.75" Height="2.7900499941905323" IsExpanded="true" />
+        <EntityTypeShape EntityType="TouristTicketSyncModel.tbUserInRole" Width="1.5" PointX="6.75" PointY="11.75" Height="2.5765795401732134" IsExpanded="true" />
+        <EntityTypeShape EntityType="TouristTicketSyncModel.tbWebUser" Width="1.5" PointX="12.75" PointY="0.75" Height="3.2169909022251773" IsExpanded="true" />
+        <EntityTypeShape EntityType="TouristTicketSyncModel.tbZoneGroup" Width="1.5" PointX="12.75" PointY="4.75" Height="3.6439318102598293" IsExpanded="true" />
+        <EntityTypeShape EntityType="TouristTicketSyncModel.tbZone" Width="1.5" PointX="12.75" PointY="9.75" Height="3.0035204482078655" />
+        <EntityTypeShape EntityType="TouristTicketSyncModel.tbZoneAndZoneGroup" Width="1.5" PointX="0.75" PointY="13.75" Height="3.0035204482078655" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

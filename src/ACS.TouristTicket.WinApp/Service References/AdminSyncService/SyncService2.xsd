@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/ACS.TouristTicket.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ACS.TouristTicket.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1228/SyncService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:1228/SyncService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ACSSyncData">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TicketPKID" nillable="true" type="q1:ArrayOfint" />
+      <xs:element minOccurs="0" name="TicketTable" nillable="true" type="tns:ArrayOftbTicket" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TicketUsageLogPKID" nillable="true" type="q2:ArrayOfint" />
+      <xs:element minOccurs="0" name="TicketUsageLogTable" nillable="true" type="tns:ArrayOftbTicketUsageLog" />
+      <xs:element minOccurs="0" name="TotalRecords" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ZoneAndZoneGroupPKID" nillable="true" type="q3:ArrayOfint" />
+      <xs:element minOccurs="0" name="ZoneAndZoneGroupTable" nillable="true" type="tns:ArrayOftbZoneAndZoneGroup" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ZoneGroupPKID" nillable="true" type="q4:ArrayOfint" />
+      <xs:element minOccurs="0" name="ZoneGroupTable" nillable="true" type="tns:ArrayOftbZoneGroup" />
+      <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ZonePKID" nillable="true" type="q5:ArrayOfint" />
+      <xs:element minOccurs="0" name="ZoneTable" nillable="true" type="tns:ArrayOftbZone" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ACSSyncData" nillable="true" type="tns:ACSSyncData" />
+  <xs:complexType name="ArrayOftbTicket">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tbTicket" nillable="true" type="tns:tbTicket" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftbTicket" nillable="true" type="tns:ArrayOftbTicket" />
+  <xs:complexType name="tbTicket">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActivatedBy" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ActivatedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AllowedDays" type="xs:int" />
+      <xs:element minOccurs="0" name="AllowedUsage" type="xs:int" />
+      <xs:element minOccurs="0" name="AlreadyUsed" type="xs:int" />
+      <xs:element minOccurs="0" name="CreatedBy" type="xs:int" />
+      <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ExpiryDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsActivated" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastDownloadedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastUploadedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ModifiedBy" type="xs:int" />
+      <xs:element minOccurs="0" name="ModifiedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PKID" type="xs:int" />
+      <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TicketData" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TicketStatus" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="tbTicket" nillable="true" type="tns:tbTicket" />
+  <xs:complexType name="ArrayOftbTicketUsageLog">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tbTicketUsageLog" nillable="true" type="tns:tbTicketUsageLog" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftbTicketUsageLog" nillable="true" type="tns:ArrayOftbTicketUsageLog" />
+  <xs:complexType name="tbTicketUsageLog">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CounterID" type="xs:int" />
+      <xs:element minOccurs="0" name="DateUsed" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastDownloadedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastUploadedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PKID" type="xs:int" />
+      <xs:element minOccurs="0" name="TicketID" type="xs:int" />
+      <xs:element minOccurs="0" name="TransactionID" type="ser:guid" />
+      <xs:element minOccurs="0" name="UsageCountAfter" type="xs:int" />
+      <xs:element minOccurs="0" name="UsageCountBefore" type="xs:int" />
+      <xs:element minOccurs="0" name="ZoneID" type="xs:int" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="tbTicketUsageLog" nillable="true" type="tns:tbTicketUsageLog" />
+  <xs:complexType name="ArrayOftbZoneAndZoneGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tbZoneAndZoneGroup" nillable="true" type="tns:tbZoneAndZoneGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftbZoneAndZoneGroup" nillable="true" type="tns:ArrayOftbZoneAndZoneGroup" />
+  <xs:complexType name="tbZoneAndZoneGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CreatedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastDownloadedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastUploadedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ModifiedBy" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ModifiedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PKID" type="xs:int" />
+      <xs:element minOccurs="0" name="ZoneGroupID" type="xs:int" />
+      <xs:element minOccurs="0" name="ZoneID" type="xs:int" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="tbZoneAndZoneGroup" nillable="true" type="tns:tbZoneAndZoneGroup" />
+  <xs:complexType name="ArrayOftbZoneGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tbZoneGroup" nillable="true" type="tns:tbZoneGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftbZoneGroup" nillable="true" type="tns:ArrayOftbZoneGroup" />
+  <xs:complexType name="tbZoneGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedBy" type="xs:int" />
+      <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DaysAllowed" type="xs:int" />
+      <xs:element minOccurs="0" name="EntriesAllowed" type="xs:int" />
+      <xs:element minOccurs="0" name="LastDownloadedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastUploadedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ModifiedBy" type="xs:int" />
+      <xs:element minOccurs="0" name="ModifiedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PKID" type="xs:int" />
+      <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ZoneGroupID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZoneGroupName" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="tbZoneGroup" nillable="true" type="tns:tbZoneGroup" />
+  <xs:complexType name="ArrayOftbZone">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tbZone" nillable="true" type="tns:tbZone" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftbZone" nillable="true" type="tns:ArrayOftbZone" />
+  <xs:complexType name="tbZone">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedBy" type="xs:int" />
+      <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastDownloadedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastUploadedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ModifiedBy" type="xs:int" />
+      <xs:element minOccurs="0" name="ModifiedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PKID" type="xs:int" />
+      <xs:element minOccurs="0" name="ZoneID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZoneName" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="tbZone" nillable="true" type="tns:tbZone" />
+</xs:schema>

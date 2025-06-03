@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{92D3BD5C-2887-48C8-8734-39EF913A42B3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ACS.TouristTicket.ReportLibrary</RootNamespace>
+    <AssemblyName>ACS.TouristTicket.ReportLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Reporting.cs" />
+    <Compile Include="Forms\FrmReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmReportViewer.Designer.cs">
+      <DependentUpon>FrmReportViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ACS.Library.Common\ACS.Library.Common.csproj">
+      <Project>{0AE5597B-2E2A-48FE-95EB-60F868A03F8C}</Project>
+      <Name>ACS.Library.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ACS.TouristTicket.Common\ACS.TouristTicket.Common.csproj">
+      <Project>{906DE57B-27D3-4617-A680-3628BEEAF1AD}</Project>
+      <Name>ACS.TouristTicket.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ACS.TouristTicket.DataAccess\ACS.TouristTicket.DataAccess.csproj">
+      <Project>{9F7E8211-4182-4560-866A-E4147D99C9BC}</Project>
+      <Name>ACS.TouristTicket.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ACS.TouristTicket.Facadea\ACS.TouristTicket.Facade.csproj">
+      <Project>{59B7D3C8-E5B8-4090-8290-D5582578AE90}</Project>
+      <Name>ACS.TouristTicket.Facade</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ACS.TouristTicket.Model\ACS.TouristTicket.Model.csproj">
+      <Project>{A58CFB91-F0BC-4D78-BFE3-F3436E0B2ED6}</Project>
+      <Name>ACS.TouristTicket.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\FrmReportViewer.resx">
+      <DependentUpon>FrmReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\UserList.rdlc" />
+    <EmbeddedResource Include="Reports\ZoneAndGroupList.rdlc" />
+    <EmbeddedResource Include="Reports\TicketUnused.rdlc" />
+    <EmbeddedResource Include="Reports\TicketDetail.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\ACS.TouristTicket.DataAccess.ACSDACounter.datasource" />
+    <None Include="Properties\DataSources\ACS.TouristTicket.DataAccess.ACSDAExceptionLog.datasource" />
+    <None Include="Properties\DataSources\ACS.TouristTicket.DataAccess.ACSDATicket.datasource" />
+    <None Include="Properties\DataSources\ACS.TouristTicket.DataAccess.ACSDATicketInZone.datasource" />
+    <None Include="Properties\DataSources\ACS.TouristTicket.DataAccess.ACSDATicketSettings.datasource" />
+    <None Include="Properties\DataSources\ACS.TouristTicket.DataAccess.ACSDATicketUnused.datasource" />
+    <None Include="Properties\DataSources\ACS.TouristTicket.DataAccess.ACSDATicketUsage.datasource" />
+    <None Include="Properties\DataSources\ACS.TouristTicket.DataAccess.ACSDATransactionLog.datasource" />
+    <None Include="Properties\DataSources\ACS.TouristTicket.DataAccess.ACSDAUser.datasource" />
+    <None Include="Properties\DataSources\ACS.TouristTicket.DataAccess.ACSDAZone.datasource" />
+    <None Include="Properties\DataSources\ACS.TouristTicket.DataAccess.ACSDAZoneGroup.datasource" />
+    <None Include="Properties\DataSources\ACS.TouristTicket.DataAccess.ACSDDataSync.datasource" />
+    <None Include="Properties\DataSources\ACS.TouristTicket.DataAccess.ACSDSample.datasource" />
+    <None Include="Properties\DataSources\ACS.TouristTicket.DataAccess.TouristTicketContainer.datasource" />
+    <None Include="Properties\DataSources\ACS.TouristTicket.Model.UserAccessLog.datasource" />
+    <None Include="Properties\DataSources\ACS.TouristTicket.Model.ZoneAndZoneGroup.datasource" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
